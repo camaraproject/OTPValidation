@@ -1,0 +1,222 @@
+openapi: 3.0.0
+info:
+  title: CAMARA numberVerify SMS
+  version: 1.0.0
+servers:
+  - url: https://mobileconnect.telekom.de
+tags:
+  - name: SMS+OTP
+paths:
+  /authorize:
+    get:
+      tags:
+        - SMS+OTP
+      summary: Authorize
+      parameters:
+        - name: ui_locales
+          in: query
+          schema:
+            type: string
+          example: de-de
+        - name: login_hint
+          in: query
+          schema:
+            type: string
+          description: Test MSISDN
+          example: MSISDN:4915164819636
+        - name: response_type
+          in: query
+          schema:
+            type: string
+          example: code
+        - name: version
+          in: query
+          schema:
+            type: string
+          example: mc_v2.1
+        - name: redirect_uri
+          in: query
+          schema:
+            type: string
+          example: http%3A%2F%2Flocalhost
+        - name: nonce
+          in: query
+          schema:
+            type: integer
+          example: '123456'
+        - name: prompt
+          in: query
+          schema:
+            type: string
+          example: login
+        - name: state
+          in: query
+          schema:
+            type: string
+          example: teststate
+        - name: correlation_id
+          in: query
+          schema:
+            type: string
+          example: smsWithLink
+        - name: client_id
+          in: query
+          schema:
+            type: string
+          description: client_id provided by MNO for mc vm match api consumption
+          example: '{client_id}'
+        - name: acr_values
+          in: query
+          schema:
+            type: integer
+          example: '3'
+        - name: scope
+          in: query
+          schema:
+            type: string
+          example: openid mc_authn
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /token:
+    post:
+      tags:
+        - SMS+OTP
+      summary: Token
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          description: base64(client_id:client_secret)
+          example: 'Basic '
+        - name: grant_type
+          in: query
+          schema:
+            type: string
+          example: authorization_code
+        - name: code
+          in: query
+          schema:
+            type: string
+          example: aOzkyBJEL6RsgY9KbZd8Qs7O32SgT4ntgB4aBuZSGzI
+        - name: redirect_uri
+          in: query
+          schema:
+            type: string
+          example: http://localhost
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Nov 2022 12:00:28 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15724800; includeSubDomains
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                access_token: VwXfp1uX5ifow336G9C5OSQ5IBhs6iTZA2CDHto3snQ
+                id_token: '{id_token}'
+                token_type: Bearer
+                expires_in: '500'
+  /openid/userinfo:
+    post:
+      tags:
+        - SMS+OTP
+      summary: User Info
+      requestBody:
+        content: {}
+      parameters:
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/x-www-form-urlencoded
+        - name: Authorization
+          in: header
+          schema:
+            type: string
+          description: access_token
+          example: Bearer VwXfp1uX5ifow336G9C5OSQ5IBhs6iTZA2CDHto3snQ
+      responses:
+        '200':
+          description: OK
+          headers:
+            Date:
+              schema:
+                type: string
+                example: Wed, 09 Nov 2022 12:00:42 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json;charset=UTF-8
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            X-Content-Type-Options:
+              schema:
+                type: string
+                example: nosniff
+            X-XSS-Protection:
+              schema:
+                type: string
+                example: 1; mode=block
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, no-store, max-age=0, must-revalidate
+            Pragma:
+              schema:
+                type: string
+                example: no-cache
+            Expires:
+              schema:
+                type: integer
+                example: '0'
+            X-Frame-Options:
+              schema:
+                type: string
+                example: DENY
+            Strict-Transport-Security:
+              schema:
+                type: string
+                example: max-age=15724800; includeSubDomains
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                sub: 6f5bd5ee-680e-44b5-9c26-26201006c9ab

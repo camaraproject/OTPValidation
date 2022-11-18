@@ -1,0 +1,344 @@
+{
+	"info": {
+		"_postman_id": "b711226b-45b8-4da0-b104-37dec67228a4",
+		"name": "CAMARA numberVerify SMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10536234"
+	},
+	"item": [
+		{
+			"name": "SMS+OTP",
+			"item": [
+				{
+					"name": "Authorize",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mobileconnect.telekom.de/authorize?ui_locales=de-de&login_hint=MSISDN:4915164819636&response_type=code&version=mc_v2.1&redirect_uri=http%3A%2F%2Flocalhost&nonce=123456&prompt=login&state=teststate&correlation_id=smsWithLink&client_id={client_id}&acr_values=3&scope=openid mc_authn",
+							"protocol": "https",
+							"host": [
+								"mobileconnect",
+								"telekom",
+								"de"
+							],
+							"path": [
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "ui_locales",
+									"value": "de-de"
+								},
+								{
+									"key": "login_hint",
+									"value": "MSISDN:4915164819636",
+									"description": "Test MSISDN"
+								},
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "version",
+									"value": "mc_v2.1"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http%3A%2F%2Flocalhost"
+								},
+								{
+									"key": "nonce",
+									"value": "123456"
+								},
+								{
+									"key": "prompt",
+									"value": "login"
+								},
+								{
+									"key": "state",
+									"value": "teststate"
+								},
+								{
+									"key": "binding_message",
+									"value": "Hello",
+									"disabled": true
+								},
+								{
+									"key": "context",
+									"value": "Context",
+									"disabled": true
+								},
+								{
+									"key": "correlation_id",
+									"value": "smsWithLink"
+								},
+								{
+									"key": "client_id",
+									"value": "{client_id}",
+									"description": "client_id provided by MNO for mc vm match api consumption"
+								},
+								{
+									"key": "acr_values",
+									"value": "3"
+								},
+								{
+									"key": "scope",
+									"value": "openid mc_authn"
+								},
+								{
+									"key": "client_name",
+									"value": "clientName",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic ",
+								"description": "base64(client_id:client_secret)",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://mobileconnect.telekom.de/token?grant_type=authorization_code&code=aOzkyBJEL6RsgY9KbZd8Qs7O32SgT4ntgB4aBuZSGzI&redirect_uri=http://localhost",
+							"protocol": "https",
+							"host": [
+								"mobileconnect",
+								"telekom",
+								"de"
+							],
+							"path": [
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "authorization_code"
+								},
+								{
+									"key": "code",
+									"value": "aOzkyBJEL6RsgY9KbZd8Qs7O32SgT4ntgB4aBuZSGzI"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://localhost"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Basic ",
+										"description": "base64(client_id:client_secret)",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://mobileconnect.telekom.de/token?grant_type=authorization_code&code=aOzkyBJEL6RsgY9KbZd8Qs7O32SgT4ntgB4aBuZSGzI&redirect_uri=http://localhost",
+									"protocol": "https",
+									"host": [
+										"mobileconnect",
+										"telekom",
+										"de"
+									],
+									"path": [
+										"token"
+									],
+									"query": [
+										{
+											"key": "grant_type",
+											"value": "authorization_code"
+										},
+										{
+											"key": "code",
+											"value": "aOzkyBJEL6RsgY9KbZd8Qs7O32SgT4ntgB4aBuZSGzI"
+										},
+										{
+											"key": "redirect_uri",
+											"value": "http://localhost"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 09 Nov 2022 12:00:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"VwXfp1uX5ifow336G9C5OSQ5IBhs6iTZA2CDHto3snQ\",\n    \"id_token\": \"{id_token}\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": \"500\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Info",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer VwXfp1uX5ifow336G9C5OSQ5IBhs6iTZA2CDHto3snQ",
+								"type": "text",
+								"description": "access_token"
+							}
+						],
+						"url": {
+							"raw": "https://mobileconnect.telekom.de/openid/userinfo",
+							"protocol": "https",
+							"host": [
+								"mobileconnect",
+								"telekom",
+								"de"
+							],
+							"path": [
+								"openid",
+								"userinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Info",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "tenant-id",
+										"value": "de",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer VwXfp1uX5ifow336G9C5OSQ5IBhs6iTZA2CDHto3snQ",
+										"type": "text",
+										"description": "access_token"
+									}
+								],
+								"url": {
+									"raw": "https://mobileconnect.telekom.de/openid/userinfo",
+									"protocol": "https",
+									"host": [
+										"mobileconnect",
+										"telekom",
+										"de"
+									],
+									"path": [
+										"openid",
+										"userinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 09 Nov 2022 12:00:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json;charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15724800; includeSubDomains"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sub\": \"6f5bd5ee-680e-44b5-9c26-26201006c9ab\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
