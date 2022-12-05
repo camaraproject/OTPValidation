@@ -28,7 +28,7 @@ servers:
         default: api.example.com
         description: Host that serves the API
       basePath:
-        default: /number-verification-sms/v1
+        default: /number-verification-sms/v0
         description: Base path for the number verification sms API
 tags:
   - name: OTP Management
