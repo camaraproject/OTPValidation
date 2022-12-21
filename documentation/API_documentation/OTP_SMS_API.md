@@ -111,7 +111,7 @@ Please note, the credentials for API authentication purposes need to be adjusted
 
 | Snippet 1. Request code  |
 | ----------------------------------------------- |
-| curl -X 'POST' `https://sample-base-url/one-time-password-sms/v0/validate-code`   <br>    -H 'accept: application/json' <br>    -H 'Content-Type: application/json'<br>    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...."<br>    -d '{ "phone_number": "+346661113334"}', <br> "message": "{{code}} is your short code to authenticate with Cool App via SMS"}'  |
+| curl -X 'POST' `https://sample-base-url/one-time-password-sms/v0/validate-code`   <br>    -H 'accept: application/json' <br>    -H 'Content-Type: application/json'<br>    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...."<br>    -d '{ "phone_number": "+346661113334", <br> "message": "{{code}} is your short code to authenticate with Cool App via SMS"}'  |
 | The response will be: <br> 200 <br>   -d '{ "authentication_id": "ea0840f3-3663-4149-bd10-c7c6b8912105" }'|
 <br>
 
