@@ -58,7 +58,7 @@ Following table defines API endpoints of exposed REST based for One Time Passwor
 | -------------------------- |
 | **HTTP Request**<br> POST /one-time-password-sms/v0/send-code<br>**Query Parameters**<br> No query parameters are defined.<br>**Path Parameters**<br> No path parameters are defined.<br>**Request Body Parameters**<br> **phone_number**: A phone number belonging to the user. 'E164 with +' format.<br> **message**: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code `{{code}}`.
 
- <br>**Response**<br> **200: OK**<br>  Response body: <br>**authentication_id** : Unique id of the verification attempt the code belongs to.<br> **400:** **INVALID_ARGUMENT**<br> **401:** **UNAUTHENTICATED. <br> **403:** **PERMISSION_DENIED** <br> **403:** ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED** <br> **404:** **NOT_FOUND**<br> **405:** **METHOD_NOT_ALLOWED**<br> **406:** **NOT_ACCEPTABLE**<br> **415:** **UNSUPPORTED_MEDIA_TYPE**<br> **429:** **TOO_MANY_REQUESTS**<br> **500:** **INTERNAL**<br> **503:** **UNAVAILABLE** **504:** **TIMEOUT**<br>
+ <br>**Response**<br> **200: OK**<br>  Response body: <br>**authentication_id** : Unique id of the verification attempt the code belongs to.<br> **400:** **INVALID_ARGUMENT**<br> **401:** **UNAUTHENTICATED. <br> **403:** **PERMISSION_DENIED** <br> **403:** ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED** <br> **404:** **NOT_FOUND**<br> **405:** **METHOD_NOT_ALLOWED**<br> **406:** **NOT_ACCEPTABLE**<br> **415:** **UNSUPPORTED_MEDIA_TYPE**<br> **429:** **TOO_MANY_REQUESTS**<br> **500:** **INTERNAL**<br> **503:** **UNAVAILABLE**<br> **504:** **TIMEOUT**<br>
 <br>
 
 <br>
@@ -67,7 +67,7 @@ Following table defines API endpoints of exposed REST based for One Time Passwor
 | -------------------------- |
 | **HTTP Request**<br> POST /one-time-password-sms/v0/validate-code<br>**Query Parameters**<br> No query parameters are defined.<br>**Path Parameters**<br> No path parameters are defined.<br>**Request Body Parameters**<br> **authentication_id**: Unique id of the verification attempt the code belongs to.<br> **code**: Temporal, short code to be validated.
 
- <br>**Response**<br> **204: The OTP was successfully validated**<br> **400:** **INVALID_ARGUMENT**<br> **400:** **ONE_TIME_PASSWORD_SMS.VERIFICATION_FAILED** <br> **401:** **UNAUTHENTICATED. <br> **403:** PERMISSION_DENIED** <br> **404:** **NOT_FOUND**<br> **405:** **METHOD_NOT_ALLOWED**<br> **406:** **NOT_ACCEPTABLE**<br> **415:** **UNSUPPORTED_MEDIA_TYPE**<br> **429:** **TOO_MANY_REQUESTS**<br> **500:** **INTERNAL**<br> **503:** **UNAVAILABLE** **504:** **TIMEOUT**<br>
+ <br>**Response**<br> **204: The OTP was successfully validated**<br> **400:** **INVALID_ARGUMENT**<br> **400:** **ONE_TIME_PASSWORD_SMS.VERIFICATION_FAILED** <br> **401:** **UNAUTHENTICATED. <br> **403:** PERMISSION_DENIED** <br> **404:** **NOT_FOUND**<br> **405:** **METHOD_NOT_ALLOWED**<br> **406:** **NOT_ACCEPTABLE**<br> **415:** **UNSUPPORTED_MEDIA_TYPE**<br> **429:** **TOO_MANY_REQUESTS**<br> **500:** **INTERNAL**<br> **503:** **UNAVAILABLE**<br> **504:** **TIMEOUT**<br>
 <br>
 
 <br>
@@ -112,13 +112,13 @@ Please note, the credentials for API authentication purposes need to be adjusted
 | Snippet 1. Request code  |
 | ----------------------------------------------- |
 | curl -X 'POST' `https://sample-base-url/one-time-password-sms/v0/validate-code`   <br>    -H 'accept: application/json' <br>    -H 'Content-Type: application/json'<br>    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...."<br>    -d '{ "phone_number": "+346661113334"}', <br> "message": "{{code}} is your short code to authenticate with Cool App via SMS"}'  |
-| response will be: <br> 200 <br>   -d '{ "authentication_id": "ea0840f3-3663-4149-bd10-c7c6b8912105" }'|
+| The response will be: <br> 200 <br>   -d '{ "authentication_id": "ea0840f3-3663-4149-bd10-c7c6b8912105" }'|
 <br>
 
 | Snippet 2. Validate code  |
 | ----------------------------------------------- |
 | curl -X 'POST' `https://sample-base-url/one-time-password-sms/v0/validate-code`   <br>    -H 'accept: application/json' <br>    -H 'Content-Type: application/json'<br>    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbG...."<br>    -d '{ "authentication_id": "ea0840f3-3663-4149-bd10-c7c6b8912105", <br> "code": "AJY3"}'  |
-| response will be: <br> 204 |
+| The response will be: <br> 204 |
 <br>
 
 
