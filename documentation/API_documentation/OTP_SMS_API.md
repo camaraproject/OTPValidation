@@ -1,10 +1,10 @@
 # Overview
 
-One Time Password SMS API is used to send short-lived OTPs (one time passwords) to a phone number via SMS and validate it afterwards, in order to verify the phone number as a proof of possession.
+One Time Password SMS API is used to send short-lived OTPs (one time passwords) to a phone number via SMS and validate it afterwards, in order to provide a proof of possession of the phone number.
 
 ## 1\. Introduction
 
-One Time Password SMS API performs real-time checks to verify that the user possessed the device that carries the indicated mobile phone number. It provides a frequent method of verifying a user's phone number by delivering an OTP (one-time password) through SMS and validating it afterwards.
+One Time Password SMS API performs real-time checks to verify that the user possessed the device that carries the indicated mobile phone number. It provides a frequent method of verifying possession of the device by delivering an OTP (one-time password) through SMS and validating it afterwards.
 
 SMS OTP (one time password) is a secure method for providing one-time access to an application or performing a single transaction. OTP is most effective and legitimate for a single transaction, unlike user-generated passwords. It is a secure authentication method where a text containing a unique alphanumeric or numeric code is sent to a mobile number (MSISDM).
 
