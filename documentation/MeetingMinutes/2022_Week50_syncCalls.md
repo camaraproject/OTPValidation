@@ -57,7 +57,7 @@ MNOs continue work and aiming to deliver APIs by the end of this week.
 
    -------
 
-   >following items were not presented during meeting, although sharing status and recommendations
+   >discussion continued on Thursday 15th Dec'22
 
 ### NumberVerify SMS 2FA
 
@@ -72,8 +72,10 @@ MNOs continue work and aiming to deliver APIs by the end of this week.
 
 #### Recommendation:
 
-**Keep CAMARA flow consistent with Number Verify / Mobile Connect Verified MSISDN service design.**
-This particular service has to be considered by MNOs as a whole, starting from /authorize, ending with resource call. Otherwise, developers will get lost in various ways of handling device authentication, that is currently covered behind ***/authorize*** endpoint. Telefonica Resource endpoint (either universal like /userinfo, or dedicated, like /numberverify), should handle **ONLY user input matching logic**. TEF proposal creates complexity due to the fact that IP Address+Port passed in resource call is not common way to authenticate device. MNOs handles this in various ways, e.g. by using redirects to dedicated device indentification services, Header Enrichment, private IP based device detection, public IP+port based device detection, so handling this under resource call is not the way. Additionally, by enabling API to be consumed on the resource we create a *query API*, so when fraudster authicates it is easy to violate resource endpoint and send requests for ANY MSISDN. This is why Verified MSISDN authenticates device FIRST and if this is fine, enables user to continue to resource request.
+  >Enable Number Verify API with two flavors:
+  - Based on dedicated endpoint (Orange + TEF proposal)
+  - Keep CAMARA flow consistent with Number Verify / Mobile Connect Verified MSISDN service design.
+In the second case, this particular service has to be considered by MNO community as a whole service flow, starting from /authorize, ending with resource call. Otherwise, software developers might get confused due t ovarious ways of handling device authentication. Number Verify service hides this complexity behind ***/authorize*** endpoint. Device authentication is handled by MNOs in various ways, e.g. by using redirects to dedicated device indentification services, Header Enrichment, private IP based device detection, public IP+port based device detection. Protected resources, either it is a dedicated endpoint (**/number_verify**) or a common (**/userinfo**) should be protected with OAUTH2.0/OpenID Connect **Authorization Code** flow (three-legged-token). This helps to assure that only authorized clients are capable of consuming protected resources.
 
 -----
 
@@ -95,5 +97,5 @@ This particular service has to be considered by MNOs as a whole, starting from /
 
 1. GSMA to provide information about Openverse stakeholders (Done - Helen provided list to Vodafone and Hutchoison).
 2. simSwap - work with 2 yaml files with API description
-3. Number Verify - continue work based on MC Verified MSISDN specification, considering whole service flow.
+3. Number Verify - work with 2 yaml files with API description.
 4. Number Verify SMS 2FA - change the name of API and continue work to deliver OTP validation API.
