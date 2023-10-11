@@ -2,5 +2,5 @@
 | -----------------------| ----------------------------------------------------|
 | Deutsche Telekom AG | Dawid Wróblewski |
 | KDDI | Toshiyasu Wakayama |
-| Telefónica | Mona Mokhber |
+| Telefónica | Fernando Prado |
 | Telefónica | José Luis Urien |
