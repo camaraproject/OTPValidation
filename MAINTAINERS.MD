@@ -1,6 +1,6 @@
-| Org                    | Name                                                |
-| -----------------------| ----------------------------------------------------|
-| KDDI | Toshiyasu Wakayama |
-| Telefónica | Fernando Prado |
-| Telefónica | José Luis Urien |
-| Orange | Ludovic Robert |
+| Org                    | Name                     | GitHub Username           |
+| -----------------------| -------------------------|---------------------------|
+| KDDI | Toshiyasu Wakayama | ToshiWakayama-KDDI |
+| Telefónica | Fernando Prado | fernandopradocabrillo |
+| Telefónica | José Luis Urien |  jlurien |
+| Orange | Ludovic Robert | bigludo7 |
