@@ -78,7 +78,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
 
 
 # Following part describe scenario to test error code defined in the yaml
-# These scenarios cover following htpp status: 400, 401, 403, 404, 405, 406, 415
+# These scenarios cover following http status: 400, 401, 403, 404, 405, 406, 415
+
 # Following error code is not managed in scenarios
 # -429 as it could not be easily tested 
 
