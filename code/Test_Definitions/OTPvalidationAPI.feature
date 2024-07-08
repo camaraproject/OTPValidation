@@ -4,7 +4,8 @@ Feature: CAMARA OTPvalidationAPI, v:wip
 # * api_root: API root of the server URL
 # * phone_number: A public identifier (MSISDN) addressing a telephone subscriptionable to receive SMS. Accordingly to E.164 standard, must be prefixed with '+'.
 # * message: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code {{code}}
-# * authentication_id: identifier of a a send-code request. Identifier retrieved in sned-code response.
+# * authentication_id: identifier of a a send-code request. Identifier retrieved in send-code response.
+
 # * max_try: Maximum allowed try to validate the code for a given autorisation request.
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml, version wip
 
