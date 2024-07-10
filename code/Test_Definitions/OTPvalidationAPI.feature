@@ -23,7 +23,6 @@ Background: Common OTPvalidationAPI setup
 
   @OTPvalidationAPI_01_send_code_success_scenario
   Scenario: Validation for sucess send-code scenario
-    # valid testing
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v0/send-code"
@@ -33,11 +32,23 @@ Background: Common OTPvalidationAPI setup
     And the response header "x-correlator" has same value as the request header "x-correlator" 
     And the response body complies with the OAS schema at "/components/schemas/SendCodeResponse"
 
+  @OTPvalidationAPI_02_send_code_success_scenario_without_x-correlator
+  Scenario: Validation for sucess send-code scenario without x-correlator
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
+    And the request body property "$.message" is set to config_var: "message"
+    And the resource "/one-time-password-sms/v0/send-code"
+    And the header "Authorization" is not set
+    When the HTTP "POST" request is sent
+    Then the response property "$.status" is 200
+    And the response header "Content-Type" is "application/json"
+    And the response body complies with the OAS schema at "/components/schemas/SendCodeResponse"
+
+
 ########################################
 # Happy path scenarios for validate-code
 ########################################
 
-@OTPvalidationAPI_02_validate_code_sucess_scenario
+@OTPvalidationAPI_01_validate_code_sucess_scenario
 Scenario:  Validation for sucess validate-code scenario
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is set to the value received in the SMS
@@ -45,6 +56,15 @@ Scenario:  Validation for sucess validate-code scenario
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 204
     And the response header "x-correlator" has same value as the request header "x-correlator" 
+
+@OTPvalidationAPI_02_validate_code_sucess_scenario_without_x-correlator
+Scenario:  Validation for sucess validate-code scenario without x-correlator
+    Given an authenticationId has been retrieved from a send-code request
+    And the request body property "$.code" is set to the value received in the SMS
+    And the resource "/one-time-password-sms/v0/validate-code"
+    And the header "Authorization" is not set
+    When the HTTP "POST" request is sent
+    Then the response property "$.status" is 204
 
 
 ########################################
@@ -201,9 +221,10 @@ Scenario:  Validation for sucess validate-code scenario
     Given the header "Authorization" is removed
     And the resource "/one-time-password-sms/v0/send-code"
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
+    Then the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
 
   @OTPvalidationAPI_401.2_send_code_expired_access_token
   Scenario: Expired access token
@@ -213,6 +234,7 @@ Scenario:  Validation for sucess validate-code scenario
     Then  the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
 
   @OTPvalidationAPI_401.3_send_code_invalid_access_token
   Scenario: Invalid access token
@@ -222,6 +244,7 @@ Scenario:  Validation for sucess validate-code scenario
     Then the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
 
 
 ###########################
@@ -230,20 +253,21 @@ Scenario:  Validation for sucess validate-code scenario
 
   @OTPvalidationAPI_404.1_send_code_resource_not_found
   Scenario: resource not found 
-      Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-      And the request body property "$.message" is set to config_var: "message"
-      And the resource "/one-time-password-sms/send-code"
-      When the HTTP "POST" request is sent
-      Then the response property "$.status" is 404
-      And the response header "x-correlator" has same value as the request header "x-correlator" 
-      And the response property "$.message" contains a user friendly text
-
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
+    And the request body property "$.message" is set to config_var: "message"
+    And the resource "/one-time-password-sms/send-code"
+    When the HTTP "POST" request is sent
+    Then the response property "$.status" is 404
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
+    And the response property "$.message" contains a user friendly text
+    
 ###########################
 #  405 errors for send_code
 ###########################
 
   @OTPvalidationAPI_405.1_send_code_method_not_allowed
   Scenario: method not allowed
+  # As API Gateway can prevent this test by restricting path/routes this test should be considered as optional
       Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
       And the request body property "$.message" is set to config_var: "message"
       And the resource "/one-time-password-sms/v0/send-code"
@@ -392,7 +416,7 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @OTPvalidationAPI_400.3_validate_code_missing_authenticationId
+  @OTPvalidationAPI_400.3_validate_code_missing_code
   Scenario: missing code as request parameter
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is not valued
@@ -403,6 +427,18 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     And the response property "$.code" is "INVALID_ARGUMENT"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
+
+  @OTPvalidationAPI_400.4_validate_code_exceed_code_max_length
+    Scenario: exceed the maxLength for code
+      Given request body property "$.authenticationId" is set to the value from send-code request
+      And the request body property "$.code" is set to "thisCodeExceedsTenCharacters"
+      And the resource "/one-time-password-sms/v0/validate-code"
+      When the HTTP "POST" request is sent
+      Then the response status code is 400
+      And the response property "$.status" is 400
+      And the response property "$.code" is "INVALID_ARGUMENT"
+      And the response property "$.message" contains a user friendly text
+      And the response header "x-correlator" has same value as the request header "x-correlator"
 
 ###############################
 #  401 errors for validate_code
@@ -416,6 +452,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     Then the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
+
 
   @OTPvalidationAPI_401.2_validate_code_expired_access_token
   Scenario: Expired access token
@@ -425,6 +463,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     Then the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
+
 
   @OTPvalidationAPI_401.3_validate_code_invalid_access_token
   Scenario: Invalid access token
@@ -434,6 +474,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     Then the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
     And the response property "$.message" contains a user friendly text
+    And the response header "x-correlator" has same value as the request header "x-correlator" 
+
 
 ###############################
 #  404 errors for validate_code
@@ -454,6 +496,7 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
 
   @OTPvalidationAPI_405_validate_code_method_not_allowed
   Scenario: method not allowed
+  # As API Gateway can prevent this test by restricting path/routes this test should be considered as optional
       Given an authenticationId has been retrieved from a send-code request
       And the request body property "$.code" is set to the value received in the SMS
       And the resource "/one-time-password-sms/v0/validate-code"
