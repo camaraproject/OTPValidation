@@ -240,25 +240,14 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
 #  404 errors for send_code
 ###########################
 
-  @OTPvalidationAPI_404.1_send_code_resource_not_found
-  Scenario: resource not found 
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-    And the request body property "$.message" is set to config_var: "message"
-    And the resource "/one-time-password-sms/send-code"
-    When the HTTP "POST" request is sent
-    Then the response property "$.status" is 404
-    And the response header "x-correlator" has same value as the request header "x-correlator" 
-    And the response property "$.message" contains a user friendly text
-
-
-  @OTPvalidationAPI_404.2_send_code_phone_number_not_belong_to_operator
+  @OTPvalidationAPI_404.1_send_code_phone_number_not_belong_to_operator
     Scenario: Validation for failed scenario for a phone number that did not belong to the operator
     Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
       And the request body property "$.message" is set to config_var: "message"
       And the resource "/one-time-password-sms/v0/send-code"
       When the HTTP "POST" request is sent
       Then the response property "$.status" is 404
-      And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.UNKNOWN_PHONE_NUMBER"
+      And the response property "$.code" is "DEVICE_NOT_FOUND"
       And the response property "$.message" contains a user friendly text
       And the response header "x-correlator" has same value as the request header "x-correlator" 
     
@@ -488,6 +477,7 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
       And the resource "/one-time-password-sms/validate-code"
       When the HTTP "POST" request is sent
       Then the response property "$.status" is 404
+      And the response property "$.code" is NOT_FOUND"
       And the response header "x-correlator" has same value as the request header "x-correlator" 
       And the response property "$.message" contains a user friendly text
 
