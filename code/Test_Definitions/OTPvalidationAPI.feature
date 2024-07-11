@@ -83,7 +83,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator" 
 
-@OTPvalidationAPI_04_send_code_phone_number_not_allowed_1
+@OTPvalidationAPI_04_send_code_phone_number_not_allowed
   Scenario: Validation for failed scenario for a phone number that cannot receive SMS
   Given the request body property "$.phoneNumber" is set to a phone number that cannot receive SMS
     And the request body property "$.message" is set to config_var: "message"
@@ -94,18 +94,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator" 
 
-@OTPvalidationAPI_05_send_code_phone_number_not_allowed_2
-  Scenario: Validation for failed scenario for a phone number that did not belong to the operator
-  Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
-    And the request body property "$.message" is set to config_var: "message"
-    And the resource "/one-time-password-sms/v0/send-code"
-    When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
-    And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.PHONE_NUMBER_NOT_ALLOWED"
-    And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator" 
-
-@OTPvalidationAPI_06_send_code_phone_number_not_allowed_3
+@OTPvalidationAPI_05_send_code_phone_number_not_allowed_3
   Scenario: Validation for failed scenario for a phone number that target a landline
   Given the request body property "$.phoneNumber" is set to a phone number that target an landline
     And the request body property "$.message" is set to config_var: "message"
@@ -116,7 +105,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator" 
 
-@OTPvalidationAPI_07_send_code_phone_number_blocked
+@OTPvalidationAPI_06_send_code_phone_number_blocked
   Scenario: Validation for failed scenario for a phone number that block SMS reception
   Given the request body property "$.phoneNumber" is set to a phone number that that has an active SMS barring
     And the request body property "$.message" is set to config_var: "message"
@@ -260,6 +249,18 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
     Then the response property "$.status" is 404
     And the response header "x-correlator" has same value as the request header "x-correlator" 
     And the response property "$.message" contains a user friendly text
+
+
+  @OTPvalidationAPI_404.2_send_code_phone_number_not_belong_to_operator
+    Scenario: Validation for failed scenario for a phone number that did not belong to the operator
+    Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
+      And the request body property "$.message" is set to config_var: "message"
+      And the resource "/one-time-password-sms/v0/send-code"
+      When the HTTP "POST" request is sent
+      Then the response property "$.status" is 404
+      And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.UNKNOWN_PHONE_NUMBER"
+      And the response property "$.message" contains a user friendly text
+      And the response header "x-correlator" has same value as the request header "x-correlator" 
     
 ###########################
 #  405 errors for send_code
