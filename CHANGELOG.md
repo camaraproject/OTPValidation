@@ -1,5 +1,30 @@
 # Changelog
 
+## v1.0.0
+
+**v1.0.0 is the first stable version for CAMARA OTP Validation API**
+
+v1.0.0 is a patch release of v0.5.0 of the OTPValidation API. Please read also the notes and changes for v0.5.0 release
+
+### Added
+
+* User Story in documentation/API_documentation directory
+* Test Definition in Test_Definitions directory
+
+### Changed
+
+* Aligned with CAMARA design guidelines & Identity Consent management
+* Make the '+' mandatory for the phone number.
+* Cosmetic change following megalinter integration
+
+### Fixed
+
+* n/a
+
+### Removed
+
+* n/a
+
 ## v0.5.0
 
 **This is the first alpha release of the OTPValidation API**
