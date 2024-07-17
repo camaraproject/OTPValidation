@@ -1,6 +1,7 @@
 # OTPVAlidationAPI API User Story
 
-OTP Validation user story is splitted in 2 steps. Both steps are mandatory to perform  this user story.
+OTP Validation user story is splitted in 2 steps. Both steps are mandatory to perform this user story.
+
 
 ##  Step 1 - Request to send a code
 
