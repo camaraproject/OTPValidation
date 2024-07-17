@@ -30,9 +30,9 @@ Current schedule, registration, & meeting links are available on the confluence 
 * **The latest available release and version of CAMARA OTPValidaton API is 1.0.0-rc.1 This is the first stable version candidate of the API**. It is suitable for implementors and could be use with customers in productive environments.
 * Release 1.0.0 of the API is available within the [release-1.0.0 branch](https://github.com/camaraproject/OTPvalidationAPI/tree/release-1.0.0):
   - API definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/main/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/main/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/main/code/API_definitions/one-time-password-sms.yaml)
+    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/release-1.0.0/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/release-1.0.0/code/API_definitions/one-time-password-sms.yaml&nocors)
+    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/release-1.0.0/code/API_definitions/one-time-password-sms.yaml)
 * The previous version 0.5.0 is available on [release-0.5.0](https://github.com/camaraproject/OTPvalidationAPI/tree/release-0.5.0) branch.
 
 ## Contributorship and mailing list
