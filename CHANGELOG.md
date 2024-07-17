@@ -10,7 +10,7 @@
 
 
 
-# r1.1
+# r1.1 - rc
 
 ## Release Notes
 
@@ -27,7 +27,7 @@ The API definition(s) are based on
 ## OTPValidationAPI v1.0.0-rc.1
 
 
-**OTPvalidationAPI 1.0.0-rc.1**
+**OTPvalidationAPI 1.0.0-rc.1** is the first release-candidate version for the v1.0.0 of the OTPValidationAPI.
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/main/code/API_definitions/one-time-password-sms.yaml&nocors)
