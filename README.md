@@ -22,7 +22,7 @@ Repository to describe, develop, document and test the OTP Validation API family
 ## Meetings
 
 
-* Current schedule, registration, & meeting links: [Meetings information]([documentation/MeetingMinutes/README.MD](https://wiki.camaraproject.org/display/CAM/OTPValidation))
+Current schedule, registration, & meeting links are available on the confluence page: [Meetings information](https://wiki.camaraproject.org/display/CAM/OTPValidation)
   
 ## Status and released versions
 
