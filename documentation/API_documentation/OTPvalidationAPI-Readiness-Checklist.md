@@ -1,6 +1,7 @@
 # API Readiness Checklist
 
-Checklist for one-time-password-sms api-version in vx
+Checklist for one-time-password-sms v1.0.0-rc.1 in r1.1
+
 
 | Nr | API release assets  | alpha | release-candidate |  public-release<br>initial | public-release<br> stable | Status | Comments |
 |----|----------------------------------------------|:-----:|:-----------------:|:-------:|:------:|:----:|:----:|
