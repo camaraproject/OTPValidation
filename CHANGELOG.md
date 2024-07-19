@@ -49,7 +49,7 @@ This version contains significant changes compared to v0.5.0, and it is not back
 * Make the '+' mandatory for the phone number by @bigludo7 [PR50](https://github.com/camaraproject/OTPvalidationAPI/pull/50)
 * Cosmetic change following megalinter integration by @bigludo7 [PR53](https://github.com/camaraproject/OTPvalidationAPI/pull/53)
 * Update Authorization and authentication part accordingly to ICM by @bigludo7 [PR65](https://github.com/camaraproject/OTPvalidationAPI/pull/65)
-Align securitySchemes with ICM by @fernandopradocabrillo [PR68](https://github.com/camaraproject/OTPvalidationAPI/pull/68)
+* Align securitySchemes with ICM by @fernandopradocabrillo [PR68](https://github.com/camaraproject/OTPvalidationAPI/pull/68)
 
 ### Fixed
 
