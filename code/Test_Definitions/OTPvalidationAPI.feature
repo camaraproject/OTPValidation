@@ -96,7 +96,8 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
 
 @OTPvalidationAPI_05_send_code_phone_number_not_allowed_3
   Scenario: Validation for failed scenario for a phone number that target a landline
-  Given the request body property "$.phoneNumber" is set to a phone number that target an landline
+  Given the request body property "$.phoneNumber" is set to a phone number that target a landline
+
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v0/send-code"
     When the HTTP "POST" request is sent
