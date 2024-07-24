@@ -477,7 +477,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
       And the resource "/one-time-password-sms/validate-code"
       When the HTTP "POST" request is sent
       Then the response property "$.status" is 404
-      And the response property "$.code" is NOT_FOUND"
+      And the response property "$.code" is "NOT_FOUND"
+
       And the response header "x-correlator" has same value as the request header "x-correlator" 
       And the response property "$.message" contains a user friendly text
 
