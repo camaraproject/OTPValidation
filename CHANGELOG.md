@@ -25,7 +25,7 @@ The API definition(s) are based on
 ## OTPValidationAPI v1.0.0-rc.1
 
 
-**OTPvalidationAPI 1.0.0-rc.1** is the first release-candidate version for the v1.0.0 of the OTPValidationAPI.
+**one-time-password-sms 1.0.0-rc.1** is the first release-candidate version for the v1.0.0 of the one-time-password-sms API.
 This version contains significant changes compared to v0.5.0, and it is not backward compatible.
 
 - API definition **with inline documentation**:
