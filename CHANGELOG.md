@@ -29,7 +29,7 @@ The API definition(s) are based on
 This version contains significant changes compared to v0.5.0, and it is not backward compatible.
 
 - API definition **with inline documentation**:
-  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
   - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
     
