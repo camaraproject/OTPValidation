@@ -1,4 +1,4 @@
-# Changelog OTPvalidationAPI
+# Changelog OTPvalidation
 
 
 ## Table of contents
@@ -22,7 +22,7 @@ The API definition(s) are based on
 * Identity and Consent Management v0.2.0
 
 
-## OTPValidationAPI v1.0.0-rc.1
+## OTPValidation v1.0.0-rc.1
 
 
 **one-time-password-sms 1.0.0-rc.1** is the first release-candidate version for the v1.0.0 of the one-time-password-sms API.
@@ -31,7 +31,7 @@ This version contains significant changes compared to v0.5.0, and it is not back
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
   - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml)
-  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
     
 
 ### Added
