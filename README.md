@@ -7,11 +7,11 @@
 
 # OTP Validation
 
-Repository to describe, develop, document and test the OTP Validation API family
+Repository to describe, develop, document and test the OTPValidation API family
 
 ## Scope
 
-* Service APIs for “OTP Validation” (see APIBacklog.md)  
+* Service APIs for “OTPValidation” (see APIBacklog.md)  
   * One Time Password SMS API performs real-time checks to verify that the user possessed the device that carries the indicated mobile phone number.
   * It provides a frequent method of verifying possession of the device by delivering an OTP (one-time password) through SMS and validating it afterwards.
   * NOTE: The scope of this API family should be limited (at least at a first stage) to 4G and 5G.
