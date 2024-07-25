@@ -1,9 +1,9 @@
-<a href="https://github.com/camaraproject/OTPvalidationAPI/commits/" title="Last Commit"><img src="https://img.shields.io/github/last-commit/camaraproject/OTPvalidationAPI?style=plastic"></a>
-<a href="https://github.com/camaraproject/OTPvalidationAPI/issues" title="Open Issues"><img src="https://img.shields.io/github/issues/camaraproject/OTPvalidationAPI?style=plastic"></a>
-<a href="https://github.com/camaraproject/OTPvalidationAPI/pulls" title="Open Pull Requests"><img src="https://img.shields.io/github/issues-pr/camaraproject/OTPvalidationAPI?style=plastic"></a>
-<a href="https://github.com/camaraproject/OTPvalidationAPI/graphs/contributors" title="Contributors"><img src="https://img.shields.io/github/contributors/camaraproject/OTPvalidationAPI?style=plastic"></a>
-<a href="https://github.com/camaraproject/OTPvalidationAPI" title="Repo Size"><img src="https://img.shields.io/github/repo-size/camaraproject/OTPvalidationAPI?style=plastic"></a>
-<a href="https://github.com/camaraproject/OTPvalidationAPI/blob/main/LICENSE" title="License"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation/commits/" title="Last Commit"><img src="https://img.shields.io/github/last-commit/camaraproject/OTPvalidation?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation/issues" title="Open Issues"><img src="https://img.shields.io/github/issues/camaraproject/OTPvalidation?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation/pulls" title="Open Pull Requests"><img src="https://img.shields.io/github/issues-pr/camaraproject/OTPvalidation?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation/graphs/contributors" title="Contributors"><img src="https://img.shields.io/github/contributors/camaraproject/OTPvalidation?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation" title="Repo Size"><img src="https://img.shields.io/github/repo-size/camaraproject/OTPvalidation?style=plastic"></a>
+<a href="https://github.com/camaraproject/OTPvalidation/blob/main/LICENSE" title="License"><img src="https://img.shields.io/badge/License-Apache%202.0-green.svg?style=plastic"></a>
 
 # OTP Validation
 
@@ -27,13 +27,13 @@ Current schedule, registration, & meeting links are available on the confluence 
 ## Status and released versions
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* **The latest pre-release of OTPValidaton is r1.1. The pre-release contains the release candidate of the first stable version of the one-time-password-sms API**. The pre-release is suitable for implementors.
-* The Release Tag is [r1.1](https://github.com/camaraproject/OTPvalidationAPI/releases/tag/r1.1).
+* **The latest pre-release of OTPValidation is r1.1. The pre-release contains the release candidate of the first stable version of the one-time-password-sms API**. The pre-release is suitable for implementors.
+* The Release Tag is [r1.1](https://github.com/camaraproject/OTPvalidation/releases/tag/r1.1).
   - API definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
-* The previous version 0.5.0 is available on [release-0.5.0](https://github.com/camaraproject/OTPvalidationAPI/tree/release-0.5.0) branch.
+    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
+    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
+* The previous version 0.5.0 is available on [release-0.5.0](https://github.com/camaraproject/OTPvalidation/tree/release-0.5.0) branch.
 
 ## Contributorship and mailing list
 
