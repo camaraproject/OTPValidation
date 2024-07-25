@@ -27,7 +27,7 @@ Current schedule, registration, & meeting links are available on the confluence 
 ## Status and released versions
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* **The latest available version of CAMARA OTPValidaton API is 1.0.0-rc.1 This is the release candidate of the first stable version candidate of the API**. The pre-release is suitable for implementors.
+* **The latest pre-release of OTPValidaton is r1.1. The pre-release contains the release candidate of the first stable version of the one-time-password-sms API**. The pre-release is suitable for implementors.
 * The Release Tag is [r1.1](https://github.com/camaraproject/OTPvalidationAPI/releases/tag/r1.1).
   - API definition **with inline documentation**:
     - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidationAPI/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
