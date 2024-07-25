@@ -1,4 +1,4 @@
-# Changelog OTPvalidation
+# Changelog OTPValidation
 
 
 ## Table of contents
@@ -31,21 +31,21 @@ This version contains significant changes compared to v0.5.0, and it is not back
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
   - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml)
-  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
     
 
 ### Added
 
-* User Story in documentation/API_documentation directory by @bigludo7 [PR71](https://github.com/camaraproject/OTPvalidationAPI/pull/71)
-* Test Definition in Test_Definitions directory by @bigludo7 [PR61](https://github.com/camaraproject/OTPvalidationAPI/pull/61)
+* User Story in documentation/API_documentation directory by @bigludo7 [PR71](https://github.com/camaraproject/OTPValidationAPI/pull/71)
+* Test Definition in Test_Definitions directory by @bigludo7 [PR61](https://github.com/camaraproject/OTPValidationAPI/pull/61)
 
 ### Changed
 
 * Aligned with CAMARA design guidelines & Identity Consent management
-* Make the '+' mandatory for the phone number by @bigludo7 [PR50](https://github.com/camaraproject/OTPvalidationAPI/pull/50)
-* Cosmetic change following megalinter integration by @bigludo7 [PR53](https://github.com/camaraproject/OTPvalidationAPI/pull/53)
-* Update Authorization and authentication part accordingly to ICM by @bigludo7 [PR65](https://github.com/camaraproject/OTPvalidationAPI/pull/65)
-* Align securitySchemes with ICM by @fernandopradocabrillo [PR68](https://github.com/camaraproject/OTPvalidationAPI/pull/68)
+* Make the '+' mandatory for the phone number by @bigludo7 [PR50](https://github.com/camaraproject/OTPValidationAPI/pull/50)
+* Cosmetic change following megalinter integration by @bigludo7 [PR53](https://github.com/camaraproject/OTPValidationAPI/pull/53)
+* Update Authorization and authentication part accordingly to ICM by @bigludo7 [PR65](https://github.com/camaraproject/OTPValidationAPI/pull/65)
+* Align securitySchemes with ICM by @fernandopradocabrillo [PR68](https://github.com/camaraproject/OTPValidationAPI/pull/68)
 
 ### Fixed
 
