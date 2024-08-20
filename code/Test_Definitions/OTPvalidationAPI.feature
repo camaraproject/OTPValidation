@@ -118,7 +118,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
     And the response header "x-correlator" has same value as the request header "x-correlator" 
 
 # Following part describe scenario to test error code defined in the yaml
-# These scenarios cover following http status: 400, 401, 404, 405, 406, 415
+# These scenarios cover following http status: 400, 401, 404, 406, 415
 
 # Following error code is not managed in scenarios
 # -429 as it could not be easily tested
@@ -251,21 +251,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
       And the response property "$.code" is "NOT_FOUND"
       And the response property "$.message" contains a user friendly text
       And the response header "x-correlator" has same value as the request header "x-correlator" 
-    
-###########################
-#  405 errors for send_code
-###########################
 
-  @OTPvalidationAPI_405.1_send_code_method_not_allowed
-  Scenario: method not allowed
-  # As API Gateway can prevent this test by restricting path/routes this test should be considered as optional
-      Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-      And the request body property "$.message" is set to config_var: "message"
-      And the resource "/one-time-password-sms/v0/send-code"
-      When the HTTP "GET" request is sent
-      Then the response property "$.status" is 405
-      And the response header "x-correlator" has same value as the request header "x-correlator"
-      And the response property "$.message" contains a user friendly text
 
 ###########################
 #  406 errors for send_code
@@ -363,7 +349,7 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
     And the response header "x-correlator" has same value as the request header "x-correlator" 
 
 # Following part describe scenario to test error code defined in the yaml
-# These scenarios cover following http status: 400, 401, 404, 405, 406, 415
+# These scenarios cover following http status: 400, 401, 404, 406, 415
 
 # Following error code is not managed in scenarios
 # -429 as it could not be easily tested
@@ -483,19 +469,6 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
       And the response header "x-correlator" has same value as the request header "x-correlator" 
       And the response property "$.message" contains a user friendly text
 
-###############################
-#  405 errors for validate_code
-###############################
-
-  @OTPvalidationAPI_405_validate_code_method_not_allowed
-  Scenario: method not allowed
-  # As API Gateway can prevent this test by restricting path/routes this test should be considered as optional
-      Given an authenticationId has been retrieved from a send-code request
-      And the request body property "$.code" is set to the value received in the SMS
-      And the resource "/one-time-password-sms/v0/validate-code"
-      When the HTTP "GET" request is sent
-      Then the response property "$.status" is 405
-      And the response header "x-correlator" has same value as the request header "x-correlator" 
 
 ###############################
 #  406 errors for validate_code
