@@ -8,6 +8,49 @@
 
 **Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until it has been released. For example, changes may be reverted before a release is published. For the best results, use the latest published release.**
 
+# r1.2
+
+## Release Notes
+
+This release contains the definition and documentation of
+* one-time-password-sms 1.0.0
+
+The API definition(s) are based on
+* Commonalities v0.4.0
+* Identity and Consent Management v0.2.0
+
+## one-time-password-sms 1.0.0
+
+**one-time-password-sms 1.0.0 is the public release for v1.0.0 of the OTPValidation API.**
+
+- API definition **with inline documentation**:
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r1.2/code/API_definitions/one-time-password-sms.yaml)
+
+**Main Changes**
+
+* Error code 405 has been removed to the yaml accordingly to Commonalities rule.
+
+### Added
+
+* N/A
+
+### Changed
+
+* N/A
+
+### Fixed
+
+* N/A
+
+### Removed
+
+* Remove 405 error code in the yaml & test definition by @bigludo7 [PR80](https://github.com/camaraproject/OTPValidationAPI/pull/80)
+
+## New Contributors
+* N/A
+
 
 
 # r1.1 - rc
