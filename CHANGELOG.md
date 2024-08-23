@@ -3,8 +3,9 @@
 
 ## Table of contents
 
+- **[r1.2](#r12)**
 - **[r1.1](#r11)**
-
+- **[v0.5.0](#v050)**
 
 **Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until it has been released. For example, changes may be reverted before a release is published. For the best results, use the latest published release.**
 
@@ -110,4 +111,32 @@ This version contains significant changes compared to v0.5.0, and it is not back
 - @fernandopradocabrillo made their first contribution in Fernando replaces Mona as maintainer [#37](https://github.com/camaraproject/OTPvalidationAPI/pull/37)
 - @rartych made their first contribution in GitHub workflows [#60](https://github.com/camaraproject/OTPvalidationAPI/pull/60)
 
+# v0.5.0
 
+**This is the first alpha release of the OTPValidation API**
+
+- API definition **with inline documentation**
+
+## Please note:
+
+- This is an alpha version, it should be considered as a draft
+- There are bug fixes to be expected and incompatible changes in upcoming versions 
+- The release is suitable for implementors, but it is not recommended to use the API with customers in productive environments
+- Version numbers before v0.5.0 were used during the development of this version but not released
+- 
+### Added
+
+* CHANGELOG.md
+* API definition ready for a release
+
+### Changed
+
+* Aligned with CAMARA design guidelines
+
+### Fixed
+
+* n/a
+
+### Removed
+
+* n/a
