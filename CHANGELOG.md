@@ -34,11 +34,16 @@ The API definition(s) are based on
 
 ### Added
 
-* N/A
+* User Story in documentation/API_documentation directory by @bigludo7 [PR71](https://github.com/camaraproject/OTPValidationAPI/pull/71)
+* Test Definition in Test_Definitions directory by @bigludo7 [PR61](https://github.com/camaraproject/OTPValidationAPI/pull/61)
 
 ### Changed
 
-* N/A
+* Aligned with CAMARA design guidelines & Identity Consent management
+* Make the '+' mandatory for the phone number by @bigludo7 [PR50](https://github.com/camaraproject/OTPValidationAPI/pull/50)
+* Cosmetic change following megalinter integration by @bigludo7 [PR53](https://github.com/camaraproject/OTPValidationAPI/pull/53)
+* Update Authorization and authentication part accordingly to ICM by @bigludo7 [PR65](https://github.com/camaraproject/OTPValidationAPI/pull/65)
+* Align securitySchemes with ICM by @fernandopradocabrillo [PR68](https://github.com/camaraproject/OTPValidationAPI/pull/68)
 
 ### Fixed
 
