@@ -30,7 +30,9 @@ The API definition(s) are based on
 
 **Main Changes**
 
-* Error code 405 has been removed to the yaml accordingly to Commonalities rule.
+* API and test definitions updated to conform to the Commonalities v0.4.0 and Identity and Consent Management v0.2.0 guidelines included in the CAMARA Fall24 meta-release
+* Additional documentation & test cases added.
+
 
 ### Added
 
