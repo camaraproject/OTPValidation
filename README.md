@@ -32,7 +32,7 @@ Current schedule, registration, & meeting links are available on the confluence 
     - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r1.2/code/API_definitions/one-time-password-sms.yaml)
     - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors)
     - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r1.2/code/API_definitions/one-time-password-sms.yaml)
-* Other releases of this sub project are available in https://github.com/camaraproject/OTPvalidation/releases 
+* Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 
 ## Contributorship and mailing list
