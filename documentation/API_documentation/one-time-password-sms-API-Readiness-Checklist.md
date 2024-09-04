@@ -11,8 +11,9 @@ Checklist for one-time-password-sms v1.0.0 in r1.2
 |  4 | API versioning convention applied            |   M   |         M         |    M    |    M   |   Y   |      |
 |  5 | API documentation                            |   M   |         M         |    M    |    M   |   Y   | Embed documentation into API spec - [link](/code/API_definitions/one-time-password-sms.yaml)  |
 |  6 | User stories                                 |   O   |         O         |    O    |    M   |   Y   | [link](/documentation/API_documentation/OTPValidationAPI_User_Story.md) |
-|  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   Y   | [link](/code/Test_Definitions/OTPvalidationAPI.feature) |
-|  8 | Enhanced API test cases & documentation      |   O   |         O         |    O    |    M   |   Y   | [link](/code/Test_Definitions/OTPvalidationAPI.feature) |
+|  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   Y   | [link](/code/Test_Definitions/one-time-password-sms.feature) |
+|  8 | Enhanced API test cases & documentation      |   O   |         O         |    O    |    M   |   Y   | [link](/code/Test_Definitions/one-time-password-sms.feature) |
+
 |  9 | Test result statement                        |   O   |         O         |    O    |    M   |   N   |       |
 
 | 10 | API release numbering convention applied     |   M   |         M         |    M    |    M   |   Y   |      |
