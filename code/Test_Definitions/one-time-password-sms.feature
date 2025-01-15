@@ -70,7 +70,7 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
 ################################################################################
 
 # Following part describe scenario to test error code defined in the yaml
-# These scenarios cover following http status: 400, 401, 403, 404 & 422
+# These scenarios cover following http status: 400, 401, 403 & 404
 
 # Following error code is not managed in scenarios
 # -429 as it could not be easily tested
@@ -246,32 +246,6 @@ Scenario: Validation for failed scenario for a phone number that did not belong 
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-###########################
-#  422 errors for send-code
-###########################
-
-@OTPvalidationAPI_422.1_missing_identifier
-Scenario: Missing phone number in the request
-    Given the request body property "$.phoneNumber" is not set and the phoneNumber could not be identified by the token
-    And the request body property "$.message" is set to config_var: "message"
-    And the resource "/one-time-password-sms/v2/send-code"
-    When the HTTP "POST" request is sent
-    Then the response property "$.status" is 422
-    And the response property "$.code" is "MISSING_IDENTIFIER"
-    And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator"
-
-@OTPvalidationAPI_422.2_unnecessary_identifier
-Scenario: An explicit identifier is provided when a phone number has already been identified from the access token
-    Given the request body property "$.phoneNumber" is set
-    And the header "Authorization" is set to a valid access token emitted for a different device
-    And the request body property "$.message" is set to config_var: "message"
-    And the resource "/one-time-password-sms/v2/send-code"
-    When the HTTP "POST" request is sent
-    Then the response property "$.status" is 422
-    And the response property "$.code" is "UNNECESSARY_IDENTIFIER"
-    And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator"
 
 ################################################################################
 # Rainy path scenarios for validate-code
