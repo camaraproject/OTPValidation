@@ -3,11 +3,56 @@
 
 ## Table of contents
 
+- **[r2.1](#r21)**
 - **[r1.2](#r12)**
 - **[r1.1](#r11)**
 - **[v0.5.0](#v050)**
 
 **Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until it has been released. For example, changes may be reverted before a release is published. For the best results, use the latest published release.**
+
+
+# r2.1
+
+## Release Notes
+
+This release contains the definition and documentation of
+* one-time-password-sms 1.1.0-rc1
+
+The API definition(s) are based on
+* Commonalities v0.5.0
+* Identity and Consent Management v0.3.0
+
+## one-time-password-sms 1.1.0-rc1
+
+This is the first **public release** of the one-time-password-sms API version 1.1.0-rc1. It contains mainly alignments with the Commonalities 0.5.0 and the Release Management Guidelines. 
+
+- API definition **with inline documentation**:
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r2.1/code/API_definitions/one-time-password-sms.yaml)
+
+In the following there is the list of the modifications with respect to the previous release.
+
+### Added
+
+N/A
+
+### Changed
+- Make phoneNumber optional in send-code (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+- Align x-correlator definition (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+- Restructure test cases (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+- Change error structure as defined in commonalities 0.5.0 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+
+### Fixed
+
+* Fix test cases @OTPvalidationAPI_02_send_code_success_scenario_without_x-correlator and @OTPvalidationAPI_02_validate_code_sucess_scenario_without_x-correlator (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+
+### Removed
+- Remove from the yaml the errors 406, 415, 500, 503 & 504 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+- Remove test cases for 406 & 415 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/commits/r2.1
+
 
 # r1.2
 
