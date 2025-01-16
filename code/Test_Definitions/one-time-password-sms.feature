@@ -23,7 +23,7 @@ Background: Common OTPvalidationAPI setup
 
 @OTPvalidationAPI_01_send_code_success_scenario
 Scenario: Validation for sucess send-code scenario
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number" or the phoneNumber is identified by the token
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -34,7 +34,7 @@ Scenario: Validation for sucess send-code scenario
 
 @OTPvalidationAPI_02_send_code_success_scenario_without_x-correlator
 Scenario: Validation for sucess send-code scenario without x-correlator
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number" or the phoneNumber is identified by the token
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     And the header "Authorization" is set
@@ -101,7 +101,7 @@ Scenario: Empty object as request body for send_code
 
 @OTPvalidationAPI_400.4_send_code_incorrect_phone_number_request_body
 Scenario: Incorrect phone number in the request
-    Given the request body property "$.phoneNumber" is set to "3301" and the phoneNumber cannot be identified by the token
+    Given the request body property "$.phoneNumber" is set to "3301"
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -112,7 +112,7 @@ Scenario: Incorrect phone number in the request
 
 @OTPvalidationAPI_400.5_send_code_missing_message
 Scenario: Missing message request attribute
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number" and the phoneNumber cannot be identified by the token
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is not valued
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -123,7 +123,7 @@ Scenario: Missing message request attribute
 
 @OTPvalidationAPI_400.6_send_code_missing_code_request_body
 Scenario: Missing {{code}} in message request attribute
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number" and the phoneNumber cannot be identified by the token
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to "message without code"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -134,7 +134,7 @@ Scenario: Missing {{code}} in message request attribute
 
 @OTPvalidationAPI_400.7_send_code_message_too_long
 Scenario: message attribute exceed maximum lenght authorized
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number" and the phoneNumber cannot be identified by the token
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is longer than config_var:"max_lenght"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -158,8 +158,8 @@ Scenario: No Authorization header for send-code
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
 @OTPvalidationAPI_401.2_send_code_expired_access_token
-Scenario: Expired access token for send-code
-    Given the header "Authorization" is set to an expired access token
+Scenario: Expired  for send-code
+    Given the header "Authorization" is set to an expired 
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
     Then  the response property "$.status" is 401
@@ -184,7 +184,6 @@ Scenario: Invalid access token for send-code
 @OTPvalidationAPI_03_send_code_max_otp_code
 Scenario: Validation for failed scenario too many codes have been requested
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-    And the phoneNumber cannot be identified by the token
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
@@ -197,7 +196,6 @@ Scenario: Validation for failed scenario too many codes have been requested
 @OTPvalidationAPI_04_send_code_phone_number_not_allowed
 Scenario: Validation for failed scenario for a phone number that cannot receive SMS
     Given the request body property "$.phoneNumber" is set to a phone number that cannot receive SMS
-    And the phoneNumber cannot be identified by the token
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -209,7 +207,6 @@ Scenario: Validation for failed scenario for a phone number that cannot receive 
 @OTPvalidationAPI_05_send_code_phone_number_not_allowed_3
 Scenario: Validation for failed scenario for a phone number that target a landline
     Given the request body property "$.phoneNumber" is set to a phone number that target a landline
-    And the phoneNumber cannot be identified by the token
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -221,7 +218,6 @@ Scenario: Validation for failed scenario for a phone number that target a landli
 @OTPvalidationAPI_06_send_code_phone_number_blocked
 Scenario: Validation for failed scenario for a phone number that block SMS reception
     Given the request body property "$.phoneNumber" is set to a phone number that that has an active SMS barring
-    And the phoneNumber cannot be identified by the token
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
@@ -237,7 +233,6 @@ Scenario: Validation for failed scenario for a phone number that block SMS recep
 @OTPvalidationAPI_404.1_send_code_phone_number_not_belong_to_operator
 Scenario: Validation for failed scenario for a phone number that did not belong to the operator
     Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
-    And the phoneNumber cannot be identified by the token
     And the request body property "$.message" is set to config_var: "message"
     And the resource "/one-time-password-sms/v1/send-code"
     When the HTTP "POST" request is sent
