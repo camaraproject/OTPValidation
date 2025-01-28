@@ -43,6 +43,8 @@ N/A
 - Add pattern and example for x-correlator(no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/92
 - Restructure test cases (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
 - Change error structure as defined in commonalities 0.5.0 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
+- Add pattern for x-correlator: https://github.com/camaraproject/OTPValidation/pull/92
+- Update 429 error message: https://github.com/camaraproject/OTPValidation/pull/92
 
 ### Fixed
 
