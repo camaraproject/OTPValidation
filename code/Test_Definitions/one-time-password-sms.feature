@@ -1,4 +1,4 @@
-Feature: CAMARA OTPvalidationAPI, v:1.0.0
+Feature: CAMARA OTPvalidationAPI, v:1.1.0-rc1
 
 # Environment variables:
 # * api_root: API root of the server URL
