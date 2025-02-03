@@ -45,4 +45,4 @@ Current schedule, registration, & meeting links are available on the confluence 
 
 ## Relevant Information
 
-Since April 4th 2024, OTP meeting minutes are merged with Sim Swap & Number Verification meeting minutes. WG meeting minutes are placed in [NumberVerification Meeting Minutes](https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/14564484/NumberVerification+Meeting+Minutes)
+Since April 4th 2024, OTP Validation meetings are merged with Sim Swap & Number Verification meetings. Meeting minutes are placed in [NumberVerification Meeting Minutes](https://lf-camaraproject.atlassian.net/wiki/x/hDze)
