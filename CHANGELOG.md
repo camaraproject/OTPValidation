@@ -41,8 +41,7 @@ In the following there is the list of the modifications with respect to the prev
 N/A
 
 ### Changed
-- Align x-correlator definition & : https://github.com/camaraproject/OTPValidation/pull/89
-- Add pattern and example for x-correlator(no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/92
+- Align x-correlator definition with Commonalities 0.5.0, added pattern and example (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89 and https://github.com/camaraproject/OTPValidation/pull/92
 - Restructure test cases (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
 - Change error structure as defined in commonalities 0.5.0 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
 - Add pattern for x-correlator: https://github.com/camaraproject/OTPValidation/pull/92
