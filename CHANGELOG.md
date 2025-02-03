@@ -34,7 +34,7 @@ This is the first **pre-release** of the one-time-password-sms API version 1.1.0
   - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r2.1/code/API_definitions/one-time-password-sms.yaml)
 
-In the following there is the list of the modifications with respect to the previous release.
+In the following there is the list of the modifications with respect to the previous release r1.2.
 
 ### Added
 
