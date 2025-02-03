@@ -54,7 +54,7 @@ N/A
 - Remove from the yaml the errors 406, 415, 500, 503 & 504 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
 - Remove test cases for 406 & 415 (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/89
 
-**Full Changelog**: https://github.com/camaraproject/OTPValidation/commits/r2.1
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r1.2...r2.1
 
 
 # r1.2
