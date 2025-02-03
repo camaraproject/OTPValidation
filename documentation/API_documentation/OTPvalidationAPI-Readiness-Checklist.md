@@ -2,7 +2,8 @@
 
 Checklist for one-time-password-sms v1.1.0-rc1 in r2.1
 
-| Nr | API release assets  | alpha | release-candidate |  public-release<br>initial | public-release<br> stable | Status | Comments |
+| Nr | API release assets  | alpha | release-candidate |  public-release<br>initial | public-release<br> stable | Status | Reference information |
+
 |----|----------------------------------------------|:-----:|:-----------------:|:-------:|:------:|:----:|:----:|
 |  1 | API definition                               |   M   |         M         |    M    |    M   |   Y   | [link](/code/API_definitions/one-time-password-sms.yaml) |
 |  2 | Design guidelines from Commonalities applied |   O   |         M         |    M    |    M   |  Y    |  [r2.2](https://github.com/camaraproject/Commonalities/releases/tag/r2.2)    |
