@@ -17,7 +17,8 @@
 
 This pre-release contains the definition and documentation of
 
-* one-time-password-sms 1.1.0-rc1
+* one-time-password-sms 1.1.0-rc.1
+
 
 The API definition(s) are based on
 * Commonalities v0.5.0
