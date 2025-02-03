@@ -26,7 +26,7 @@ The API definition(s) are based on
 
 ## one-time-password-sms 1.1.0-rc1
 
-This is the first **pre-release** of the one-time-password-sms API version 1.1.0-rc1. It contains mainly alignments with the Commonalities 0.5.0 and the Release Management Guidelines. 
+This is the first **pre-release** of the one-time-password-sms API version 1.1.0-rc1. It contains mainly alignments with the Commonalities 0.5.0. 
 
 
 - API definition **with inline documentation**:
