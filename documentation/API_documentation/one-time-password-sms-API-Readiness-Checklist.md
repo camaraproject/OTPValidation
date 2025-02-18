@@ -14,7 +14,7 @@ Checklist for one-time-password-sms v1.1.0-rc.2 in r2.2
 |  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   Y   | [link](code/Test_Definitions/one-time-password-sms.feature) |
 |  8 | Enhanced API test cases & documentation      |   O   |         O         |    O    |    M   |   Y   |  [link](code/Test_Definitions/one-time-password-sms.feature) |
 |  9 | Test result statement                        |   O   |         O         |    O    |    M   |   N   | Not yet available |
-| 10 | API release numbering convention applied     |   M   |         M         |    M    |    M   |   Y   | r2.1    |
+| 10 | API release numbering convention applied     |   M   |         M         |    M    |    M   |   Y   | r2.2    |
 | 11 | Change log updated                           |   M   |         M         |    M    |    M   |   Y   | [link](/CHANGELOG.md) |
 | 12 | Previous public-release was certified        |   O   |         O         |    O    |    M   |   Y   | see (1)    |
 
