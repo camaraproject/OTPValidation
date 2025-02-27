@@ -28,11 +28,11 @@ Current schedule, registration, & meeting links are available on the confluence 
 ## Status and released versions
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* `NEW`: Pre-release r2.2 with version 1.1.0-rc.2 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r2.2)
-  - API definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r2.2/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.2/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.2/code/API_definitions/one-time-password-sms.yaml)
+* The release r2.3 with version 1.1.0 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r2.3)
+  - API one-time-password-sms 1.1.0 definition **with inline documentation**:
+    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r2.3/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml&nocors)
+    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
 * Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 
