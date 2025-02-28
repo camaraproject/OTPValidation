@@ -9,24 +9,20 @@
 
 # OTP Validation
 
-Repository to describe, develop, document and test the OTPValidation API family
+Incubated API Repository to describe, develop, document, and test the OTPValidation API.
+
+API Repository wiki page: https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/14562760/OTPValidation
 
 ## Scope
 
 * Service APIs for “OTPValidation” (see APIBacklog.md)  
   * One Time Password SMS API performs real-time checks to verify that the user possessed the device that carries the indicated mobile phone number.
   * It provides a frequent method of verifying possession of the device by delivering an OTP (one-time password) through SMS and validating it afterwards.
-  * NOTE: The scope of this API family should be limited (at least at a first stage) to 4G and 5G.
-* Describe, develop, document and test the APIs (with 1-2 Telcos)
   * Started: October 2022
   * Incubating stage since: February 2025
 
-## Meetings
-
-
-Current schedule, registration, & meeting links are available on the confluence page: [Meetings information](https://wiki.camaraproject.org/display/CAM/OTPValidation)
   
-## Status and released versions
+## Release information
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
 * The release r2.3 with version 1.1.0 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r2.3)
@@ -37,13 +33,14 @@ Current schedule, registration, & meeting links are available on the confluence 
 * Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 
-## Contributorship and mailing list
+## Contributing
 
-* To subscribe / unsubscribe to the mailing list of this Sub Project and thus be / resign as Contributor please visit <https://lists.camaraproject.org/g/sp-nvs>.
-* A message to all Contributors of this Sub Project can be sent using <sp-nvs@lists.camaraproject.org>.
+* Meeting are held virtually
+    * Schedule: Every 4 weeks
+    * Meeting merged with Number Verification & Sim Swap API projects
+    * Current schedule, registration, & meeting links are available on the confluence page: [Meetings information](https://wiki.camaraproject.org/display/CAM/OTPValidation)
+    * Meeting minutes on Number verification page: access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/14564484/NumberVerification+Meeting+Minutes) 
+* Mailing list
+    * To subscribe / unsubscribe to the mailing list of this Sub Project and thus be / resign as Contributor please visit <https://lists.camaraproject.org/g/sp-nvs>.
+   * A message to all Contributors of this Sub Project can be sent using <sp-nvs@lists.camaraproject.org>.
 
-
-
-## Relevant Information
-
-Since April 4th 2024, OTP Validation meetings are merged with Sim Swap & Number Verification meetings. Meeting minutes are placed in [NumberVerification Meeting Minutes](https://lf-camaraproject.atlassian.net/wiki/x/hDze)
