@@ -18,7 +18,7 @@ Repository to describe, develop, document and test the OTPValidation API family
   * NOTE: The scope of this API family should be limited (at least at a first stage) to 4G and 5G.
 * Describe, develop, document and test the APIs (with 1-2 Telcos)
   * Started: October 2022
-  * Location: virtually
+  * Incubating stage since: February 2025
 
 ## Meetings
 
