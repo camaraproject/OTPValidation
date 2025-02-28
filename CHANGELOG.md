@@ -16,7 +16,8 @@
 
 ## Release Notes
 
-This pre-release contains the definition and documentation of
+This release contains the definition and documentation of
+
 
 * one-time-password-sms 1.1.0
 
