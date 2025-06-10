@@ -9,9 +9,9 @@
 
 # OTP Validation
 
-Incubated API Repository to describe, develop, document, and test the OTPValidation API.
+Incubating API Repository to evolve and maintain the definitions and documentation of OTPValidation Service API within the Sub Project [Number Insights](https://lf-camaraproject.atlassian.net/wiki/x/BYEpBQ)
 
-API Repository wiki page: https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/14562760/OTPValidation
+* API Repository [wiki page](https://lf-camaraproject.atlassian.net/wiki/x/yDXe)
 
 ## Scope
 
@@ -36,12 +36,10 @@ API Repository wiki page: https://lf-camaraproject.atlassian.net/wiki/spaces/CAM
 
 ## Contributing
 
-* Meeting are held virtually
-    * Schedule: Every 4 weeks
-    * Meeting merged with Number Verification & Sim Swap API projects
-    * Current schedule, registration, & meeting links are available on the confluence page: [Meetings information](https://wiki.camaraproject.org/display/CAM/OTPValidation)
-    * Meeting minutes on Number verification page: access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/spaces/CAM/pages/14564484/NumberVerification+Meeting+Minutes) 
+* Meetings are held virtually
+   * Current schedule, registration, & meeting links are available on the Sub Project wiki page: [Meetings information](https://lf-camaraproject.atlassian.net/wiki/x/BYEpBQ)
+   * Minutes: Access [meeting minutes](https://lf-camaraproject.atlassian.net/wiki/x/hDze)
 * Mailing list
-    * To subscribe / unsubscribe to the mailing list of this Sub Project and thus be / resign as Contributor please visit <https://lists.camaraproject.org/g/sp-nvs>.
-   * A message to all Contributors of this Sub Project can be sent using <sp-nvs@lists.camaraproject.org>.
+  * Subscribe / Unsubscribe to the mailing list <https://lists.camaraproject.org/g/sp-number-insights>.
+  * A message to the community of this Sub Project can be sent using <sp-number-insights@lists.camaraproject.org>.
 
