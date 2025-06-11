@@ -30,7 +30,7 @@ Incubating API Repository to evolve and maintain the definitions and documentati
   - API one-time-password-sms 1.1.0 definition **with inline documentation**:
     - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r2.3/code/API_definitions/one-time-password-sms.yaml)
     - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
 * Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 

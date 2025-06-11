@@ -32,7 +32,7 @@ This is the **release** of the one-time-password-sms API version 1.1.0.
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.3/code/API_definitions/one-time-password-sms.yaml&nocors)
-  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r2.3/code/API_definitions/one-time-password-sms.yaml)
 
 Changes with respect to the previous release r1.2.
@@ -80,7 +80,7 @@ This is the second **pre-release** of the one-time-password-sms API version 1.1.
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.2/code/API_definitions/one-time-password-sms.yaml&nocors)
-  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.2/code/API_definitions/one-time-password-sms.yaml)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.2/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r2.2/code/API_definitions/one-time-password-sms.yaml)
 
 In the following there is the list of the modifications with respect to the previous release r2.1.
@@ -123,7 +123,7 @@ This is the first **pre-release** of the one-time-password-sms API version 1.1.0
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml&nocors)
-  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r2.1/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r2.1/code/API_definitions/one-time-password-sms.yaml)
 
 In the following there is the list of the modifications with respect to the previous release r1.2.
@@ -166,7 +166,7 @@ The API definition(s) are based on
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml&nocors)
-  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.2/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r1.2/code/API_definitions/one-time-password-sms.yaml)
 
 **Main Changes**
@@ -221,7 +221,7 @@ This version contains significant changes compared to v0.5.0, and it is not back
 
 - API definition **with inline documentation**:
   - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml&nocors)
-  - [View it on Swagger Editor](https://editor.swagger.io/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r1.1/code/API_definitions/one-time-password-sms.yaml)
   - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r1.1/code/API_definitions/one-time-password-sms.yaml)
     
 
