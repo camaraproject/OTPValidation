@@ -20,7 +20,7 @@
 
 This pre-release contains the definition and documentation of
 
-* one-time-password-sms 1.2.0-rc.1
+* one-time-password-sms 1.1.1-rc.1
 
 
 The API definition(s) are based on
@@ -29,7 +29,7 @@ The API definition(s) are based on
 
 ## one-time-password-sms 1.1.0-rc1
 
-This is the first **pre-release** of the one-time-password-sms API version 1.2.0-rc.1. It contains mainly alignments with the Commonalities 0.6.0. 
+This is the first **pre-release** of the one-time-password-sms API version 1.1.1-rc.1. It contains mainly alignments with the Commonalities 0.6.0. 
 
 
 - API definition **with inline documentation**:
