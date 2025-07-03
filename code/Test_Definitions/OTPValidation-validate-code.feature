@@ -1,4 +1,4 @@
-Feature: CAMARA OTPvalidationAPI, v1.2.0-rc.1 - operation validateCode
+Feature: CAMARA OTPvalidationAPI, v1.1.1-rc.2 - operation validateCode
 
 # Environment variables:
 # * api_root: API root of the server URL
