@@ -20,16 +20,16 @@
 
 This pre-release contains the definition and documentation of
 
-* one-time-password-sms 1.1.1-rc.2
+* one-time-password-sms 1.1.1-rc.3
 
 
 The API definition(s) are based on
 * Commonalities v0.6.0-rc.1 (r3.2)
 * Identity and Consent Management v0.4.0-rc.1 (r3.2)
 
-## one-time-password-sms 1.1.1-rc2
+## one-time-password-sms 1.1.1-rc3
 
-This is the first **pre-release** of the one-time-password-sms API version 1.1.1-rc.2. 
+This is the first **pre-release** of the one-time-password-sms API version 1.1.1. 
 
 
 - API definition **with inline documentation**:
