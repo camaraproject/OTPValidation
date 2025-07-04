@@ -1,4 +1,4 @@
-Feature: CAMARA OTPvalidationAPI, v1.1.1-rc.2 - operation sendCode
+Feature: CAMARA OTPvalidationAPI, v1.1.1-rc.3 - operation sendCode
 
 # Environment variables:
 # * api_root: API root of the server URL
@@ -9,7 +9,7 @@ Feature: CAMARA OTPvalidationAPI, v1.1.1-rc.2 - operation sendCode
 
 Background: Common OTPvalidationAPI setup
     Given an environment at "apiRoot"
-    and the resource "/one-time-password-sms/v1rc2/send-code"                                                            |
+    and the resource "/one-time-password-sms/v1rc3/send-code"                                                            |
 
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
