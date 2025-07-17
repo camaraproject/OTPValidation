@@ -1,4 +1,4 @@
-Feature: CAMARA OTPvalidationAPI, v1.1.1-rc.3 - operation validateCode
+Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
 
 # Environment variables:
 # * api_root: API root of the server URL
