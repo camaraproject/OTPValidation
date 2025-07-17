@@ -8,7 +8,8 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
 # * message: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code {{code}}. Operator could specified a max_lenght for the message.
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
-Background: Common OTPvalidationAPI setup
+Background: Common OTPvalidation sendCode setup
+
     Given an environment at "apiRoot"
     and the resource "/one-time-password-sms/v1rc3/send-code"                                                            |
 
