@@ -1,4 +1,5 @@
-Feature: one-time-password-sms, v1.1.1-rc.3 - operation sendCode
+Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
+
 
 # Environment variables:
 # * api_root: API root of the server URL
