@@ -16,8 +16,16 @@ Incubating API Repository to evolve and maintain the definitions and documentati
 ## Scope
 
 * Service APIs for “OTPValidation” (see APIBacklog.md)  
-  * One Time Password SMS API performs real-time checks to verify that the user possessed the device that carries the indicated mobile phone number.
-  * It provides a frequent method of verifying possession of the device by delivering an OTP (one-time password) through SMS and validating it afterwards.
+  * The OTP SMS API facilitates real-time verification of a user's device by sending a unique code via SMS to the specified mobile phone number. The process involves three key steps:
+1. **Code Generation and Delivery:**  
+   The send-code operation is used by the API consumer (e.g., an application) to request a one-time code to be sent by SMS to the application user's mobile phone along with an message to the user's mobile device.
+2. **User Input:**  
+   The user receives the SMS and enters the received code into the application.
+3. **Verification:**  
+   The application submits the entered code using the validate-code operation, which then verifies its accuracy and responds with a confirmation indicating whether the code is valid.
+
+This process ensures secure, real-time validation of user possession of the specified device, enhancing authentication security.
+  *  by delivering a one-time password (OTP) to it through SMS and validating the received code with the user's operator after the code is entered as requested.
   * Started: October 2022
   * Incubating stage since: February 2025
 
@@ -25,12 +33,12 @@ Incubating API Repository to evolve and maintain the definitions and documentati
 ## Release information
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* The public release r2.3 with version 1.1.0 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r2.3)
+* `NEW`: Pre-release r3.1 with version 1.1.1-rc.3 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r3.1)
 
-  - API one-time-password-sms 1.1.0 definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r2.3/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r2.3/code/API_definitions/one-time-password-sms.yaml)
+  - API one-time-password-sms 1.1.1-rc.3 definition **with inline documentation**:
+    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r3.1/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.1/code/API_definitions/one-time-password-sms.yaml&nocors)
+    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.1/code/API_definitions/one-time-password-sms.yaml)
 * Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 

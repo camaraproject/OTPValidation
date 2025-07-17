@@ -1,4 +1,5 @@
-Feature: CAMARA OTPvalidationAPI, v1.1.0 - operation sendCode
+Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
+
 
 # Environment variables:
 # * api_root: API root of the server URL
@@ -7,9 +8,11 @@ Feature: CAMARA OTPvalidationAPI, v1.1.0 - operation sendCode
 # * message: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code {{code}}. Operator could specified a max_lenght for the message.
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
-Background: Common OTPvalidationAPI setup
+Background: Common OTPvalidation sendCode setup
+
     Given an environment at "apiRoot"
-    and the resource "/one-time-password-sms/v1/send-code"                                                            |
+    and the resource "/one-time-password-sms/v1rc3/send-code"                                                            |
+
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
