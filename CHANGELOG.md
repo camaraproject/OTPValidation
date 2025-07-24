@@ -3,6 +3,7 @@
 
 ## Table of contents
 
+- **[r3.1](#r31)**
 - **[r2.3](#r23)**
 - **[r2.2](#r22)**
 - **[r2.1](#r21)**
@@ -11,6 +12,48 @@
 - **[v0.5.0](#v050)**
 
 **Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until it has been released. For example, changes may be reverted before a release is published. For the best results, use the latest published release.**
+
+
+# r3.1
+
+## Release Notes
+
+This pre-release contains the definition and documentation of
+
+* one-time-password-sms 1.1.1-rc.3
+
+
+The API definition(s) are based on
+* Commonalities v0.6.0-rc.1 (r3.2)
+* Identity and Consent Management v0.4.0-rc.1 (r3.2)
+
+## one-time-password-sms 1.1.1-rc3
+
+This is the first **pre-release** of the one-time-password-sms API version 1.1.1. 
+
+
+- API definition **with inline documentation**:
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r3.1/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r3.1/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r3.1/code/API_definitions/one-time-password-sms.yaml)
+
+In the following there is the list of the modifications with respect to the previous release r2.3.
+
+### Added
+N/A
+
+### Changed
+- Align x-correlator definition with Commonalities 0.6.0, changed pattern and example (no change for the consumer): https://github.com/camaraproject/OTPValidation/pull/111
+
+### Fixed
+N/A
+
+
+### Removed
+N/A
+
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r2.3...r3.1
+
 
 # r2.3
 

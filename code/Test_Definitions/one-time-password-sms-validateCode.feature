@@ -1,4 +1,4 @@
-Feature: CAMARA OTPvalidationAPI, v1.1.0 - operation validateCode
+Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
 
 # Environment variables:
 # * api_root: API root of the server URL
@@ -9,9 +9,10 @@ Feature: CAMARA OTPvalidationAPI, v1.1.0 - operation validateCode
 # * max_try: Maximum allowed try to validate the code for a given autorisation request.
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
-Background: Common OTPvalidationAPI setup
+Background: Common OTPvalidation validateCode setup
+
     Given an environment at "apiRoot"
-    And the resource "/one-time-password-sms/v1/validate-code"                                                      |
+    And the resource "/one-time-password-sms/v1rc3/validate-code"                                                      |
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
