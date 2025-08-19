@@ -13,7 +13,7 @@ Checklist for one-time-password-sms v1.1.1 in r3.2
 |  6 | User stories                                 |   O   |         O         |    O    |    M   |   Y   | [link](/documentation/API_documentation/OTPValidationAPI_User_Story.md) |
 |  7 | Basic API test cases & documentation         |   O   |         M         |    M    |    M   |   Y   | [send code](code/Test_Definitions/one-time-password-sendCode.feature) / [validate code](code/Test_Definitions/one-time-password-validateCode.feature)|
 |  8 | Enhanced API test cases & documentation      |   O   |         O         |    O    |    M   |   Y   |  [send code](code/Test_Definitions/one-time-password-sendCode.feature) / [validate code](code/Test_Definitions/one-time-password-validateCode.feature) |
-|  9 | Test result statement                        |   O   |         O         |    O    |    M   |   N   |  |
+|  9 | Test result statement                        |   O   |         O         |    O    |    M   |   N   | Not yet available |
 | 10 | API release numbering convention applied     |   M   |         M         |    M    |    M   |   Y   |    |
 | 11 | Change log updated                           |   M   |         M         |    M    |    M   |   Y   | [link](/CHANGELOG.md) |
 | 12 | Previous public-release was certified        |   O   |         O         |    O    |    M   |   Y   | see (1)    |
@@ -25,4 +25,5 @@ Checklist for one-time-password-sms v1.1.1 in r3.2
 Note: the checklists of a public API version and of its preceding release-candidate API version can be the same.
 
 The documentation for the content of the checklist is here: see API Readiness Checklist section in the [API Release Process](https://lf-camaraproject.atlassian.net/wiki/x/jine).
+
 
