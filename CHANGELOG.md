@@ -3,6 +3,7 @@
 
 ## Table of contents
 
+- **[r3.2](#r32)**
 - **[r3.1](#r31)**
 - **[r2.3](#r23)**
 - **[r2.2](#r22)**
@@ -363,4 +364,5 @@ This version contains significant changes compared to v0.5.0, and it is not back
 ### Removed
 
 * n/a
+
 
