@@ -1,11 +1,13 @@
 Feature: one-time-password-sms, v1.1.1 - Operation sendCode
 
-
-# Environment variables:
+# Input to be provided by the implementation to the tester
+#
+# Implementation indications:
 # * api_root: API root of the server URL
 # * phone_number: A public identifier (MSISDN) addressing a telephone subscriptionable to receive SMS. Accordingly to E.164 standard, must be prefixed with '+'.
 #     *For additional test scenarios, operator could provide phone number for line that cannot receive SMS, line that blocked SMS reception, not belonging to the operator, designing a landline number.
 # * message: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code {{code}}. Operator could specified a max_lenght for the message.
+#
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
 Background: Common OTPvalidation sendCode setup
@@ -205,4 +207,5 @@ Scenario: Validation for failed scenario for a phone number that did not belong 
     And the response property "$.code" is "NOT_FOUND"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
+
 
