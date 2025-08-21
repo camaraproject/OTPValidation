@@ -17,21 +17,20 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
     And the request body is set by default to a request body compliant with the schema
 
-
 ########################################
 # Happy path scenarios for validate-code
 ########################################
 
-@OTPvalidationAPI_01_validate_code_sucess_scenario
-Scenario:  Validation for sucess validate-code scenario
+  @OTPvalidationAPI_01_validate_code_sucess_scenario
+  Scenario:  Validation for sucess validate-code scenario
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is set to the value received in the SMS
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 204
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_02_validate_code_sucess_scenario_without_x-correlator
-Scenario:  Validation for sucess validate-code scenario without x-correlator
+  @OTPvalidationAPI_02_validate_code_sucess_scenario_without_x-correlator
+  Scenario:  Validation for sucess validate-code scenario without x-correlator
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is set to the value received in the SMS
     And the header "Authorization" is set
@@ -53,18 +52,18 @@ Scenario:  Validation for sucess validate-code scenario without x-correlator
 #  400 errors for validate-code
 ###############################
 
-@OTPvalidationAPI_400.1_validate_code_no_request_body
-Scenario: Missing request body
+  @OTPvalidationAPI_400.1_validate_code_no_request_body
+  Scenario: Missing request body
     Given the request body is not included
     When the HTTP "POST" request is sent
     Then the response status code is 400
     And the response property "$.status" is 400
     And the response property "$.code" is "INVALID_ARGUMENT"
     And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator" 
+    And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.2_validate_code_empty_request_body
-Scenario: Empty object as request body for validate-code
+  @OTPvalidationAPI_400.2_validate_code_empty_request_body
+  Scenario: Empty object as request body for validate-code
     Given the request body is set to "{}"
     When the HTTP "POST" request is sent
     Then the response status code is 400
@@ -73,8 +72,8 @@ Scenario: Empty object as request body for validate-code
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.3_validate_code_missing_authenticationId
-Scenario: missing authenticationId as request parameter
+  @OTPvalidationAPI_400.3_validate_code_missing_authenticationId
+  Scenario: missing authenticationId as request parameter
     Given the request body property "$.authenticationId" is not valued
     And the request body property "$.code" is set to a format valid value
     When the HTTP "POST" request is sent
@@ -84,8 +83,8 @@ Scenario: missing authenticationId as request parameter
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.3_validate_code_missing_code
-Scenario: missing code as request parameter
+  @OTPvalidationAPI_400.3_validate_code_missing_code
+  Scenario: missing code as request parameter
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is not valued
     When the HTTP "POST" request is sent
@@ -95,8 +94,8 @@ Scenario: missing code as request parameter
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.4_validate_code_exceed_code_max_length
-Scenario: exceed the maxLength for code
+  @OTPvalidationAPI_400.4_validate_code_exceed_code_max_length
+  Scenario: exceed the maxLength for code
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to "thisCodeExceedsTenCharacters"
     When the HTTP "POST" request is sent
@@ -106,8 +105,8 @@ Scenario: exceed the maxLength for code
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.5_validate_code_invalid_otp_scenario
-Scenario: Validations for invalid otp validate-code scenario
+  @OTPvalidationAPI_400.5_validate_code_invalid_otp_scenario
+  Scenario: Validations for invalid otp validate-code scenario
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to a value distinct from the value received in the SMS
     When the HTTP "POST" request is sent
@@ -116,8 +115,8 @@ Scenario: Validations for invalid otp validate-code scenario
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.6_validate_code_verification_expired_scenario_1
-Scenario:  Validations for verification expired validate-code scenario
+  @OTPvalidationAPI_400.6_validate_code_verification_expired_scenario_1
+  Scenario:  Validations for verification expired validate-code scenario
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to the received in the SMS
     And the time elapsed since the send-code exceed the allowed time
@@ -127,8 +126,8 @@ Scenario:  Validations for verification expired validate-code scenario
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.7_validate_code_verification_expired_scenario_2
-Scenario:  Validations for verification expired because a new one has been requested for the same phone number
+  @OTPvalidationAPI_400.7_validate_code_verification_expired_scenario_2
+  Scenario:  Validations for verification expired because a new one has been requested for the same phone number
     Given Two send-code request has been sequentially triggered for the same phoneNumber
     And request body property "$.authenticationId" is set to the value got for the first send-code request
     And the request body property "$.code" is set to the received in the SMS for this first request
@@ -138,8 +137,8 @@ Scenario:  Validations for verification expired because a new one has been reque
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.8_validate_code_verification_expired_scenario_3
-Scenario:  Validations for verification expired because authenticationId is no longer valid because it has already been used
+  @OTPvalidationAPI_400.8_validate_code_verification_expired_scenario_3
+  Scenario:  Validations for verification expired because authenticationId is no longer valid because it has already been used
     Given a validate-code has been succesfully performed for a authenticationId
     And request body property "$.authenticationId" is valued again with this authenticationId
     And the request body property "$.code" is set to the code received in the SMS
@@ -149,8 +148,8 @@ Scenario:  Validations for verification expired because authenticationId is no l
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_400.9_validate_code_verification_failed_scenario
-Scenario:  Validations for verification failed validate-code scenario whe maximum number of attempts for this authenticationId was exceeded without providing a valid OTP
+  @OTPvalidationAPI_400.9_validate_code_verification_failed_scenario
+  Scenario:  Validations for verification failed validate-code scenario whe maximum number of attempts for this authenticationId was exceeded without providing a valid OTP
     Given an authenticationId has been retrieved from a send-code request
     And (config_var:"max_try"-1) calls with the request body property "$.code" set to a value distinct from the value received in the SMS were performed
     When the HTTP "POST" request is sent
@@ -163,8 +162,8 @@ Scenario:  Validations for verification failed validate-code scenario whe maximu
 #  401 errors for validate-code
 ###############################
 
-@OTPvalidationAPI_401.1_validate_code_no_authorization_header
-Scenario: No Authorization header for calidate-code
+  @OTPvalidationAPI_401.1_validate_code_no_authorization_header
+  Scenario: No Authorization header for calidate-code
     Given the header "Authorization" is removed
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 401
@@ -172,8 +171,8 @@ Scenario: No Authorization header for calidate-code
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_401.2_validate_code_expired_access_token
-Scenario: Expired access token for validate-code
+  @OTPvalidationAPI_401.2_validate_code_expired_access_token
+  Scenario: Expired access token for validate-code
     Given the header "Authorization" is set to an expired access token
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 401
@@ -181,8 +180,8 @@ Scenario: Expired access token for validate-code
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-@OTPvalidationAPI_401.3_validate_code_invalid_access_token
-Scenario: Invalid access token for validate-code
+  @OTPvalidationAPI_401.3_validate_code_invalid_access_token
+  Scenario: Invalid access token for validate-code
     Given the header "Authorization" is set to an invalid access token
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 401
@@ -194,12 +193,11 @@ Scenario: Invalid access token for validate-code
 #  404 errors for validate-code
 ###############################
 
-@OTPvalidationAPI_404_validate_code_resource_not_found
-Scenario: resource not found
-      Given the request body property "$.authenticationId" is set to an unknown value
-      When the HTTP "POST" request is sent
-      Then the response property "$.status" is 404
-      And the response property "$.code" is "NOT_FOUND"
-      And the response header "x-correlator" has same value as the request header "x-correlator"
-      And the response property "$.message" contains a user friendly text
-
+  @OTPvalidationAPI_404_validate_code_resource_not_found
+  Scenario: resource not found
+    Given the request body property "$.authenticationId" is set to an unknown value
+    When the HTTP "POST" request is sent
+    Then the response property "$.status" is 404
+    And the response property "$.code" is "NOT_FOUND"
+    And the response header "x-correlator" has same value as the request header "x-correlator"
+    And the response property "$.message" contains a user friendly text
