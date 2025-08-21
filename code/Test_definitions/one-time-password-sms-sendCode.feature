@@ -9,7 +9,6 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
 Background: Common OTPvalidation sendCode setup
-
     Given an environment at "apiRoot"
     And the resource "/one-time-password-sms/v1rc3/send-code"                                                            |
     And the header "Content-Type" is set to "application/json"
@@ -204,4 +203,5 @@ Scenario: Validation for failed scenario for a phone number that did not belong 
     And the response property "$.code" is "NOT_FOUND"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
+
 
