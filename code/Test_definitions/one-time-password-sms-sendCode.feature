@@ -1,6 +1,5 @@
 Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
 
-
 # Environment variables:
 # * api_root: API root of the server URL
 # * phone_number: A public identifier (MSISDN) addressing a telephone subscriptionable to receive SMS. Accordingly to E.164 standard, must be prefixed with '+'.
@@ -201,3 +200,4 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
     And the response property "$.code" is "NOT_FOUND"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
+
