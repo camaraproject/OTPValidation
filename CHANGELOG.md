@@ -54,7 +54,8 @@ N/A
 ### Removed
 N/A
 
-**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r2.3...r3.1
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r2.3...r3.2
+
 
 # r3.1
 
