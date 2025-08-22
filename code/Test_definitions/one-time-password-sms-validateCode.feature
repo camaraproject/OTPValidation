@@ -1,4 +1,4 @@
-Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
+Feature: one-time-password-sms, v1.1.1 - operation validateCode
 
 # Environment variables:
 # * api_root: API root of the server URL
@@ -11,7 +11,7 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
 
   Background: Common OTPvalidation validateCode setup
     Given an environment at "apiRoot"
-    And the resource "/one-time-password-sms/v1rc3/validate-code"                                                      |
+    And the resource "/one-time-password-sms/v1/validate-code"                                                      |
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
@@ -201,3 +201,4 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - operation validateCode
     And the response property "$.code" is "NOT_FOUND"
     And the response header "x-correlator" has same value as the request header "x-correlator"
     And the response property "$.message" contains a user friendly text
+
