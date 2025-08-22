@@ -1,4 +1,4 @@
-Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
+Feature: one-time-password-sms, v1.1.1 - Operation sendCode
 
 # Environment variables:
 # * api_root: API root of the server URL
@@ -9,7 +9,7 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
 
   Background: Common OTPvalidation sendCode setup
     Given an environment at "apiRoot"
-    And the resource "/one-time-password-sms/v1rc3/send-code"                                                            |
+    And the resource "/one-time-password-sms/v1/send-code"                                                            |
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
@@ -200,3 +200,4 @@ Feature: one-time-password-sms, v1.1.1-rc.3 - Operation sendCode
     And the response property "$.code" is "NOT_FOUND"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
+
