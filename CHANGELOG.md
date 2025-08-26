@@ -3,12 +3,12 @@
 
 ## Table of contents
 
-- **[r3.2](#r32)**
+- **[r3.2](#r32) Fall25**
 - **[r3.1](#r31)**
-- **[r2.3](#r23)**
+- **[r2.3](#r23) Spring25**
 - **[r2.2](#r22)**
 - **[r2.1](#r21)**
-- **[r1.2](#r12)**
+- **[r1.2](#r12) Fall24**
 - **[r1.1](#r11)**
 - **[v0.5.0](#v050)**
 
@@ -366,6 +366,7 @@ This version contains significant changes compared to v0.5.0, and it is not back
 ### Removed
 
 * n/a
+
 
 
 
