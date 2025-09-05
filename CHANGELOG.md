@@ -22,6 +22,7 @@ This public release contains the definition and documentation of
 
 * one-time-password-sms 1.1.1
 
+Note: The release r3.2 is a **patch release from release r2.3**.
 
 The API definition(s) are based on
 * Commonalities v0.6.0 (r3.3)
@@ -366,6 +367,7 @@ This version contains significant changes compared to v0.5.0, and it is not back
 ### Removed
 
 * n/a
+
 
 
 
