@@ -33,12 +33,12 @@ This process ensures secure, real-time validation of user possession of the spec
 ## Release information
 
 * Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* `NEW`: Pre-release r3.1 with version 1.1.1-rc.3 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r3.1)
+* `NEW`: public release r3.2 with version 1.1.1 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r3.2)
 
-  - API one-time-password-sms 1.1.1-rc.3 definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r3.1/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.1/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.1/code/API_definitions/one-time-password-sms.yaml)
+  - API one-time-password-sms 1.1.1 definition **with inline documentation**:
+    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r3.2/code/API_definitions/one-time-password-sms.yaml)
+    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.2/code/API_definitions/one-time-password-sms.yaml&nocors)
+    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.2/code/API_definitions/one-time-password-sms.yaml)
 * Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
 * For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
 
@@ -51,4 +51,6 @@ This process ensures secure, real-time validation of user possession of the spec
 * Mailing list
   * Subscribe / Unsubscribe to the mailing list <https://lists.camaraproject.org/g/sp-number-insights>.
   * A message to the community of this Sub Project can be sent using <sp-number-insights@lists.camaraproject.org>.
+
+
 
