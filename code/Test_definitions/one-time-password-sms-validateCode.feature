@@ -201,4 +201,3 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.code" is "NOT_FOUND"
     And the response header "x-correlator" has same value as the request header "x-correlator"
     And the response property "$.message" contains a user friendly text
-
