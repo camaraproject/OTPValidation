@@ -30,17 +30,25 @@ This process ensures secure, real-time validation of user possession of the spec
   * Incubating stage since: February 2025
 
   
-## Release information
+<!-- CAMARA:RELEASE-INFO:START -->
+<!-- The following section is automatically maintained by the CAMARA project-administration tooling: https://github.com/camaraproject/project-administration -->
 
-* Note: Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
-* `NEW`: public release r3.2 with version 1.1.1 of the API one-time-password-sms is available [here](https://github.com/camaraproject/OTPvalidation/tree/r3.2)
+## Release Information
 
-  - API one-time-password-sms 1.1.1 definition **with inline documentation**:
-    - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPvalidation/blob/r3.2/code/API_definitions/one-time-password-sms.yaml)
-    - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.2/code/API_definitions/one-time-password-sms.yaml&nocors)
-    - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPvalidation/r3.2/code/API_definitions/one-time-password-sms.yaml)
-* Previous releases and pre-releases of the repository are available in https://github.com/camaraproject/OTPvalidation/releases 
-* For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPvalidation/blob/main/CHANGELOG.md)
+> [!NOTE]
+> Please be aware that the project will have frequent updates to the main branch. There are no compatibility guarantees associated with code in any branch, including main, until a new release is created. For example, changes may be reverted before a release is created. **For best results, use the latest available release**.
+
+* **NEW**: The latest public release is [r3.2](https://github.com/camaraproject/OTPValidation/releases/tag/r3.2) (Fall25), with the following API versions:
+  * **one-time-password-sms v1.1.1**
+  [[YAML]](https://github.com/camaraproject/OTPValidation/blob/r3.2/code/API_definitions/one-time-password-sms.yaml)
+  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r3.2/code/API_definitions/one-time-password-sms.yaml&nocors)
+  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r3.2/code/API_definitions/one-time-password-sms.yaml)
+* The latest public release is always available here: https://github.com/camaraproject/OTPValidation/releases/latest
+* Other releases of this repository are available in https://github.com/camaraproject/OTPValidation/releases
+* For changes see [CHANGELOG.md](https://github.com/camaraproject/OTPValidation/blob/main/CHANGELOG.md)
+
+_The above section is automatically synchronized by CAMARA project-administration._
+<!-- CAMARA:RELEASE-INFO:END -->
 
 ## Contributing
 
