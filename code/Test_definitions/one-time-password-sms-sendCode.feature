@@ -104,7 +104,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
   @OTPvalidationAPI_400.7_send_code_message_too_long
   Scenario: message attribute exceed maximum lenght authorized
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-    And the request body property "$.message" is longer than config_var:"max_lenght"
+    And the request body property "$.message" is longer than config_var:"max_length"
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 400
     And the response property "$.code" is "INVALID_ARGUMENT"
