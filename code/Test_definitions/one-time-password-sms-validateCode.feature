@@ -163,7 +163,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 ###############################
 
   @OTPvalidationAPI_401.1_validate_code_no_authorization_header
-  Scenario: No Authorization header for calidate-code
+  Scenario: No Authorization header for validate-code
     Given the header "Authorization" is removed
     When the HTTP "POST" request is sent
     Then the response property "$.status" is 401
