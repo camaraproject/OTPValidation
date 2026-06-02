@@ -33,7 +33,7 @@ dependencies:
 # - target_api_status: draft (no file yet) | alpha | rc | public
 apis:
   - api_name: one-time-password-sms
-    target_api_version: 2.0
+    target_api_version: 2.0.0
     target_api_status: public
     main_contacts:
       - bigludo7
