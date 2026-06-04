@@ -34,7 +34,7 @@ dependencies:
 apis:
   - api_name: one-time-password-sms
     target_api_version: 2.0.0
-    target_api_status: public
+    target_api_status: alpha
     main_contacts:
       - bigludo7
       - fernandopradocabrillo
