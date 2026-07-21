@@ -143,60 +143,50 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
 ###########################
-#  403 errors for send-code
+#  422 errors for send-code
 ###########################
 
-  @OTPvalidationAPI_03_send_code_max_otp_code
-  Scenario: Validation for failed scenario too many codes have been requested
-    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
-    And the request body property "$.message" is set to config_var: "message"
-    And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
-    When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
-    And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED"
-    And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator"
-
-  @OTPvalidationAPI_04_send_code_phone_number_not_allowed
+  @OTPvalidationAPI_422_01_send_code_phone_number_not_allowed
   Scenario: Validation for failed scenario for a phone number that cannot receive SMS
     Given the request body property "$.phoneNumber" is set to a phone number that cannot receive SMS
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
+    Then the response property "$.status" is 422
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.PHONE_NUMBER_NOT_ALLOWED"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @OTPvalidationAPI_05_send_code_phone_number_not_allowed_3
+  @OTPvalidationAPI_422_02_send_code_phone_number_not_allowed_2
   Scenario: Validation for failed scenario for a phone number that target a landline
     Given the request body property "$.phoneNumber" is set to a phone number that target a landline
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
+    Then the response property "$.status" is 422
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.PHONE_NUMBER_NOT_ALLOWED"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @OTPvalidationAPI_06_send_code_phone_number_blocked
+  @OTPvalidationAPI_422_03_send_code_phone_number_blocked
   Scenario: Validation for failed scenario for a phone number that block SMS reception
     Given the request body property "$.phoneNumber" is set to a phone number that that has an active SMS barring
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
+    Then the response property "$.status" is 422
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.PHONE_NUMBER_BLOCKED"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
 ###########################
-#  404 errors for send-code
+#  429 errors for send-code
 ###########################
 
-  @OTPvalidationAPI_404.1_send_code_phone_number_not_belong_to_operator
-  Scenario: Validation for failed scenario for a phone number that did not belong to the operator
-    Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
+  @OTPvalidationAPI_429_01_send_code_max_otp_code
+  Scenario: Validation for failed scenario too many codes have been requested
+    Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
+    And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 404
-    And the response property "$.code" is "NOT_FOUND"
+    Then the response property "$.status" is 429
+    And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
