@@ -75,7 +75,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @otp_send_code_400.4_send_code_incorrect_phone_number_request_body
+  @otp_send_code_400.3_send_code_incorrect_phone_number_request_body
   Scenario: Incorrect phone number in the request
     Given the request body property "$.phoneNumber" is set to "3301"
     And the request body property "$.message" is set to config_var: "message"
@@ -85,7 +85,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @otp_send_code_400.5_send_code_missing_message
+  @otp_send_code_400.4_send_code_missing_message
   Scenario: Missing message request attribute
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is not valued
@@ -95,7 +95,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @otp_send_code_400.6_send_code_missing_code_request_body
+  @otp_send_code_400.5_send_code_missing_code_request_body
   Scenario: Missing {{code}} in message request attribute
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to "message without code"
@@ -105,7 +105,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
-  @otp_send_code_400.7_send_code_message_too_long
+  @otp_send_code_400.6_send_code_message_too_long
   Scenario: message attribute exceed maximum length authorized
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is longer than 160
