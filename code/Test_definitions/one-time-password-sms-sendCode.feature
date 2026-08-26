@@ -177,15 +177,12 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the request body property "$.message" is set to config_var: "message"
     And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
     When the HTTP "POST" request is sent
-    Then the response property "$.status" is 403
+    Then the response status code is 403
+    And the response header "x-correlator" has same value as the request header "x-correlator"
+    And the response header "Content-Type" is "application/json"
+    And the response property "$.status" is 403
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED"
     And the response property "$.message" contains a user friendly text
-Then the response status code is 403
-And the response header "x-correlator" has same value as the request header "x-correlator"
-And the response header "Content-Type" is "application/json"
-And the response property "$.status" is 403
-And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.MAX_OTP_CODES_EXCEEDED"
-And the response property "$.message" contains a user friendly text
 
   @otp_send_code_403.2_send_code_phone_number_not_allowed
   Scenario: Validation for failed scenario for a phone number that cannot receive SMS
