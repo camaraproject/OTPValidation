@@ -24,7 +24,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 ########################################
 
   @otp_validate_code_01_validate_code_success_scenario
-  Scenario Outline:  Validation for success validate-code scenario
+  Scenario:  Validation for success validate-code scenario
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is set to the value received in the SMS
     When the HTTP "POST" request is sent
@@ -33,7 +33,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.status" is 204
 
   @otp_validate_code_02_validate_code_success_scenario_without_x-correlator
-  Scenario Outline:  Validation for success validate-code scenario without x-correlator
+  Scenario:  Validation for success validate-code scenario without x-correlator
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is set to the value received in the SMS
     And the header "Authorization" is set
@@ -57,7 +57,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 ###############################
 
   @otp_validate_code_400.1_validate_code_no_request_body
-  Scenario Outline: Missing request body
+  Scenario: Missing request body
     Given the request body is not included
     When the HTTP "POST" request is sent
     Then the response status code is 400
@@ -68,7 +68,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.2_validate_code_empty_request_body
-  Scenario Outline: Empty object as request body for validate-code
+  Scenario: Empty object as request body for validate-code
     Given the request body is set to "{}"
     When the HTTP "POST" request is sent
     Then the response status code is 400
@@ -79,7 +79,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.3_validate_code_missing_authenticationId
-  Scenario Outline: missing authenticationId as request parameter
+  Scenario: missing authenticationId as request parameter
     Given the request body property "$.authenticationId" is not valued
     And the request body property "$.code" is set to a format valid value
     When the HTTP "POST" request is sent
@@ -91,7 +91,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.10_validate_code_missing_code
-  Scenario Outline: missing code as request parameter
+  Scenario: missing code as request parameter
     Given an authenticationId has been retrieved from a send-code request
     And the request body property "$.code" is not valued
     When the HTTP "POST" request is sent
@@ -103,10 +103,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.4_validate_code_exceed_code_max_length
-  ScThen the response status code is 400
-    And the response header "x-correlator" has same value as the request header "x-correlator"
-    And the response header "Content-Type" is "application/json"
-    And the response property "$.status" is 400enario Outline: exceed the maxLength for code
+  Scenario: code exceeds maximum length
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to "thisCodeExceedsTenCharacters"
     When the HTTP "POST" request is sent
@@ -118,7 +115,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.5_validate_code_invalid_otp_scenario
-  Scenario Outline: Validations for invalid otp validate-code scenario
+  Scenario: Validations for invalid otp validate-code scenario
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to a value distinct from the value received in the SMS
     When the HTTP "POST" request is sent
@@ -128,7 +125,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
   @otp_validate_code_400.6_validate_code_verification_expired_scenario_1
-  Scenario Outline:  Validations for verification expired validate-code scenario
+  Scenario:  Validations for verification expired validate-code scenario
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to the received in the SMS
     And the time elapsed since the send-code exceed the allowed time
@@ -141,7 +138,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.7_validate_code_verification_expired_scenario_2
-  Scenario Outline:  Validations for verification expired because a new one has been requested for the same phone number
+  Scenario:  Validations for verification expired because a new one has been requested for the same phone number
     Given Two send-code request has been sequentially triggered for the same phoneNumber
     And request body property "$.authenticationId" is set to the value got for the first send-code request
     And the request body property "$.code" is set to the received in the SMS for this first request
@@ -154,7 +151,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.8_validate_code_verification_expired_scenario_3
-  Scenario Outline:  Validations for verification expired because authenticationId is no longer valid because it has already been used
+  Scenario:  Validations for verification expired because authenticationId is no longer valid because it has already been used
     Given a validate-code has been succesfully performed for a authenticationId
     And request body property "$.authenticationId" is valued again with this authenticationId
     And the request body property "$.code" is set to the code received in the SMS
@@ -167,7 +164,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_400.9_validate_code_verification_failed_scenario
-  Scenario Outline:  Validations for verification failed validate-code scenario when maximum number of attempts for this authenticationId was exceeded without providing a valid OTP
+  Scenario:  Validations for verification failed validate-code scenario when maximum number of attempts for this authenticationId was exceeded without providing a valid OTP
     Given an authenticationId has been retrieved from a send-code request
     And (config_var:"max_try"-1) calls with the request body property "$.code" set to a value distinct from the value received in the SMS were performed
     When the HTTP "POST" request is sent
@@ -183,7 +180,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 ###############################
 
   @otp_validate_code_401.1_validate_code_no_authorization_header
-  Scenario Outline: No Authorization header for validate-code
+  Scenario: No Authorization header for validate-code
     Given the header "Authorization" is removed
     When the HTTP "POST" request is sent
     Then the response status code is 401
@@ -194,7 +191,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_401.2_validate_code_expired_access_token
-  Scenario Outline: Expired access token for validate-code
+  Scenario: Expired access token for validate-code
     Given the header "Authorization" is set to an expired access token
     When the HTTP "POST" request is sent
     Then the response status code is 401
@@ -205,7 +202,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.message" contains a user friendly text
 
   @otp_validate_code_401.3_validate_code_invalid_access_token
-  Scenario Outline: Invalid access token for validate-code
+  Scenario: Invalid access token for validate-code
     Given the header "Authorization" is set to an invalid access token
     When the HTTP "POST" request is sent
     Then the response status code is 401
@@ -220,7 +217,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 ###############################
 
   @otp_validate_code_404_validate_code_resource_not_found
-  Scenario Outline: resource not found
+  Scenario: resource not found
     Given the request body property "$.authenticationId" is set to an unknown value
     When the HTTP "POST" request is sent
     Then the response status code is 404
