@@ -160,7 +160,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
   Scenario: Invalid access token for send-code
     Given the header "Authorization" is set to an invalid access token
     When the HTTP "POST" request is sent
-    TThen the response status code is 401
+    Then the response status code is 401
     And the response header "x-correlator" has same value as the request header "x-correlator"
     And the response header "Content-Type" is "application/json"
     And the response property "$.status" is 401
