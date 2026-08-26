@@ -24,7 +24,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 ####################################
 
   @otp_send_code_01_send_code_success_scenario
-  Scenario Outline: Validation for success send-code scenario
+  Scenario: Validation for success send-code scenario
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
@@ -35,7 +35,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response body complies with the OAS schema at "/components/schemas/SendCodeResponse"
 
   @otp_send_code_02_send_code_success_scenario_without_x-correlator
-  Scenario Outline: Validation for success send-code scenario without x-correlator
+  Scenario: Validation for success send-code scenario without x-correlator
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     And the header "Authorization" is set
@@ -61,7 +61,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 ###########################
 
   @otp_send_code_400.1_send_code_no_request_body
-  Scenario Outline: Missing request body for send_code
+  Scenario: Missing request body for send_code
     Given the request body is not included
     When the HTTP "POST" request is sent
     Then the response status code is 400
@@ -72,7 +72,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_400.2_send_code_empty_request_body
-  Scenario Outline: Empty object as request body for send_code
+  Scenario: Empty object as request body for send_code
     Given the request body is set to "{}"
     When the HTTP "POST" request is sent
     Then the response status code is 400
@@ -83,7 +83,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_400.3_send_code_incorrect_phone_number_request_body
-  Scenario Outline: Incorrect phone number in the request
+  Scenario: Incorrect phone number in the request
     Given the request body property "$.phoneNumber" is set to "3301"
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
@@ -95,7 +95,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_400.4_send_code_missing_message
-  Scenario Outline: Missing message request attribute
+  Scenario: Missing message request attribute
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is not valued
     When the HTTP "POST" request is sent
@@ -107,7 +107,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_400.5_send_code_missing_code_request_body
-  Scenario Outline: Missing {{code}} in message request attribute
+  Scenario: Missing {{code}} in message request attribute
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to "message without code"
     When the HTTP "POST" request is sent
@@ -119,7 +119,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_400.6_send_code_message_too_long
-  Scenario Outline: message attribute exceed maximum length authorized
+  Scenario: message attribute exceed maximum length authorized
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is longer than 160
     When the HTTP "POST" request is sent
@@ -135,7 +135,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 ###########################
 
   @otp_send_code_401.1_send_code_no_authorization_header
-  Scenario Outline: No Authorization header for send-code
+  Scenario: No Authorization header for send-code
     Given the header "Authorization" is removed
     When the HTTP "POST" request is sent
     Then the response status code is 401
@@ -146,7 +146,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_401.2_send_code_expired_access_token
-  Scenario Outline: Expired access token for send-code
+  Scenario: Expired access token for send-code
     Given the header "Authorization" is set to an expired
     When the HTTP "POST" request is sent
     Then the response status code is 401
@@ -157,7 +157,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_401.3_send_code_invalid_access_token
-  Scenario Outline: Invalid access token for send-code
+  Scenario: Invalid access token for send-code
     Given the header "Authorization" is set to an invalid access token
     When the HTTP "POST" request is sent
     TThen the response status code is 401
@@ -172,7 +172,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 ###########################
 
   @otp_send_code_403.1_send_code_max_otp_code
-  Scenario Outline: Validation for failed scenario too many codes have been requested
+  Scenario: Validation for failed scenario too many codes have been requested
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
     And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
@@ -183,7 +183,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response header "x-correlator" has same value as the request header "x-correlator"
 
   @otp_send_code_403.2_send_code_phone_number_not_allowed
-  Scenario Outline: Validation for failed scenario for a phone number that cannot receive SMS
+  Scenario: Validation for failed scenario for a phone number that cannot receive SMS
     Given the request body property "$.phoneNumber" is set to a phone number that cannot receive SMS
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
@@ -195,7 +195,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_403.3_send_code_phone_number_not_allowed
-  Scenario Outline: Validation for failed scenario for a phone number that target a landline
+  Scenario: Validation for failed scenario for a phone number that target a landline
     Given the request body property "$.phoneNumber" is set to a phone number that target a landline
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
@@ -207,7 +207,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.message" contains a user friendly text
 
   @otp_send_code_403.4_send_code_phone_number_blocked
-  Scenario Outline: Validation for failed scenario for a phone number that block SMS reception
+  Scenario: Validation for failed scenario for a phone number that block SMS reception
     Given the request body property "$.phoneNumber" is set to a phone number that that has an active SMS barring
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
@@ -223,7 +223,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 ###########################
 
   @otp_send_code_404.1_send_code_phone_number_not_belong_to_operator
-  Scenario Outline: Validation for failed scenario for a phone number that did not belong to the operator
+  Scenario: Validation for failed scenario for a phone number that did not belong to the operator
     Given the request body property "$.phoneNumber" is set to a phone number that did not belong to the operator
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
