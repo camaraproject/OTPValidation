@@ -106,7 +106,8 @@ Feature: one-time-password-sms, vwip - operation validateCode
   Scenario: Validations for invalid otp validate-code scenario
     Given request body property "$.authenticationId" is set to the value from send-code request
     And the request body property "$.code" is set to a value distinct from the value received in the SMS
-    When the response property "$.status" is 400
+    When the HTTP "POST" request is sent
+    Then the response property "$.status" is 400
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.INVALID_OTP"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
