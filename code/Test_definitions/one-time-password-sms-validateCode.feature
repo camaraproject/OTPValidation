@@ -77,7 +77,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     Given the request body property "$.authenticationId" is not valued
     And the request body property "$.code" is set to a format valid value
     When the HTTP "POST" request is sent
-    Then tthe response property "$.status" is 400
+    Then the response property "$.status" is 400
     And the response property "$.code" is "INVALID_ARGUMENT"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
