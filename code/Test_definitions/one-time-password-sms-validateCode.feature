@@ -7,7 +7,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 #     *For additional test scenarios, operator could provide phone number for line that cannot receive SMS, line that blocked SMS reception, not belonging to the operator, designing a landline number.
 # * message: Message template used to compose the content of the SMS sent to the phone number. It must include the following label indicating where to include the short code {{code}}. Operator could specified a max_length for the message.
 # * authentication_id: identifier of a send-code request. Identifier retrieved in send-code response.
-# * max_try: Maximum allowed try to validate the code for a given autorization request.
+# * max_try: Maximum allowed try to validate the code for a given authorization request.
 #
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
