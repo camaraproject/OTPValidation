@@ -210,7 +210,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 
   @otp_send_code_403.4_send_code_phone_number_blocked
   Scenario: Validation for failed scenario for a phone number that block SMS reception
-    Given the request body property "$.phoneNumber" is set to a phone number that that has an active SMS barring
+    Given the request body property "$.phoneNumber" is set to a phone number that has an active SMS barring
     And the request body property "$.message" is set to config_var: "message"
     When the HTTP "POST" request is sent
     Then the response status code is 403
