@@ -152,7 +152,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 
   @otp_validate_code_400.8_validate_code_verification_expired_scenario_3
   Scenario:  Validations for verification expired because authenticationId is no longer valid because it has already been used
-    Given a validate-code has been succesfully performed for a authenticationId
+    Given a validate-code has been successfully performed for a authenticationId
     And request body property "$.authenticationId" is valued again with this authenticationId
     And the request body property "$.code" is set to the code received in the SMS
     When the HTTP "POST" request is sent
