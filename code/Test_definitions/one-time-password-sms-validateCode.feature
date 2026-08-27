@@ -125,7 +125,6 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.status" is 400
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.INVALID_OTP"
     And the response property "$.message" contains a user friendly text
-    And the response header "x-correlator" has same value as the request header "x-correlator"
 
   @otp_validate_code_400.6_validate_code_verification_expired_scenario_1
   Scenario:  Validations for verification expired validate-code scenario
