@@ -147,7 +147,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 
   @otp_send_code_401.2_send_code_expired_access_token
   Scenario: Expired access token for send-code
-    Given the header "Authorization" is set to an expired
+    Given the header "Authorization" is set to an expired access token
     When the HTTP "POST" request is sent
     Then the response status code is 401
     And the response header "x-correlator" has same value as the request header "x-correlator"
