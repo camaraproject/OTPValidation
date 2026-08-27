@@ -216,7 +216,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 #  404 errors for validate-code
 ###############################
 
-  @otp_validate_code_404_validate_code_resource_not_found
+  @otp_validate_code_404.1_validate_code_resource_not_found
   Scenario: resource not found
     Given the request body property "$.authenticationId" is set to an unknown value
     When the HTTP "POST" request is sent
