@@ -193,7 +193,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.PHONE_NUMBER_NOT_ALLOWED"
     And the response property "$.message" contains a user friendly text
 
-  @otp_send_code_403.3_send_code_phone_number_not_allowed
+  @otp_send_code_403.3_send_code_phone_number_landline
   Scenario: Validation for failed scenario for a phone number that target a landline
     Given the request body property "$.phoneNumber" is set to a phone number that target a landline
     And the request body property "$.message" is set to config_var: "message"
