@@ -122,7 +122,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
     Then the response status code is 400
     And the response header "x-correlator" has same value as the request header "x-correlator"
     And the response header "Content-Type" is "application/json"
-    Then the response property "$.status" is 400
+    And the response property "$.status" is 400
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.INVALID_OTP"
     And the response property "$.message" contains a user friendly text
     And the response header "x-correlator" has same value as the request header "x-correlator"
