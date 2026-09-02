@@ -50,7 +50,6 @@ Feature: one-time-password-sms, vwip - operation validateCode
 
 # Following error code is not managed in scenarios
 # -429 as it could not be easily tested
-# -403 as there is no valid scenario
 
 ###############################
 #  400 errors for validate-code
@@ -177,6 +176,19 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response property "$.code" is "ONE_TIME_PASSWORD_SMS.VERIFICATION_FAILED"
     And the response property "$.message" contains a user friendly text
 
+  @otp_validate_code_400.11_validate_code_undeclared_property
+  Scenario: Request body contains a property not declared in the schema
+    Given an authenticationId has been retrieved from a send-code request
+    And the request body property "$.code" is set to the value received in the SMS
+    And the request body includes an undeclared property "$.unexpectedParam" set to any value
+    When the HTTP "POST" request is sent
+    Then the response status code is 400
+    And the response header "x-correlator" has same value as the request header "x-correlator"
+    And the response header "Content-Type" is "application/json"
+    And the response property "$.status" is 400
+    And the response property "$.code" is "INVALID_ARGUMENT"
+    And the response property "$.message" contains a user friendly text
+
 ###############################
 #  401 errors for validate-code
 ###############################
@@ -212,6 +224,23 @@ Feature: one-time-password-sms, vwip - operation validateCode
     And the response header "Content-Type" is "application/json"
     And the response property "$.status" is 401
     And the response property "$.code" is "UNAUTHENTICATED"
+    And the response property "$.message" contains a user friendly text
+
+###############################
+#  403 errors for validate-code
+###############################
+
+  @otp_validate_code_403.1_validate_code_missing_access_token_scope
+  Scenario: Missing access token scope for validate-code
+    Given an authenticationId has been retrieved from a send-code request
+    And the request body property "$.code" is set to the value received in the SMS
+    And the header "Authorization" is set to a valid access token that does not include scope one-time-password-sms:send-validate
+    When the HTTP "POST" request is sent
+    Then the response status code is 403
+    And the response header "x-correlator" has same value as the request header "x-correlator"
+    And the response header "Content-Type" is "application/json"
+    And the response property "$.status" is 403
+    And the response property "$.code" is "PERMISSION_DENIED"
     And the response property "$.message" contains a user friendly text
 
 ###############################
