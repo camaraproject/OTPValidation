@@ -71,7 +71,7 @@ Changes documented below are compared to version 1.1.1.
 ### Breaking changes
 
 * Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
-* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation (sendCode now returns `IDENTIFIER_NOT_FOUND` instead of `NOT_FOUND`), tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
 
 ### Added
 
