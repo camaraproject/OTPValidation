@@ -1,4 +1,4 @@
-Feature: one-time-password-sms, vwip - operation validateCode
+Feature: one-time-password-sms, v2.0.0-rc.1 - operation validateCode
 # Input to be provided by the implementation to the tester
 #
 # Implementation indications:
@@ -13,7 +13,7 @@ Feature: one-time-password-sms, vwip - operation validateCode
 
   Background: Common OTPvalidation validateCode setup
     Given an environment at "apiRoot"
-    And the resource "/one-time-password-sms/vwip/validate-code"
+    And the resource "/one-time-password-sms/v2rc1/validate-code"
     And the header "Content-Type" is set to "application/json"
     And the header "Authorization" is set to a valid access token
     And the header "x-correlator" complies with the schema at "#/components/schemas/XCorrelator"
