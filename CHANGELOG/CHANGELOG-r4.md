@@ -79,7 +79,9 @@ Changes documented below are compared to version 1.1.1.
 
 ### Changed
 
-* N/A
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
+* Aligned `ErrorInfo`, `XCorrelator` and mandatory `info.description` sections to Commonalities r4.3 by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/140
 
 ### Fixed
 
