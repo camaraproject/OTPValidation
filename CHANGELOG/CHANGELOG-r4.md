@@ -70,7 +70,8 @@ Changes documented below are compared to version 1.1.1.
 
 ### Breaking changes
 
-* N/A
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
 
 ### Added
 
@@ -82,7 +83,9 @@ Changes documented below are compared to version 1.1.1.
 
 ### Fixed
 
-* N/A
+* Fix 2 typos in test definitions (issue 122) by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/129
+* Fix: correct typos in one-time-password-sms.yaml descriptions by @hdamker in https://github.com/camaraproject/OTPValidation/pull/147
+* Solve test-definition consistency findings by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/146
 
 ### Removed
 
