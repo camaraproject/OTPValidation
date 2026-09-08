@@ -89,7 +89,7 @@ Changes documented below are compared to version 1.1.1.
 
 ### Removed
 
-* N/A
+* Removed `OUT_OF_RANGE` from the `validateCode` 400 error enum by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: no field in that operation has a range constraint
 
 **Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r3.2...r4.1
 
