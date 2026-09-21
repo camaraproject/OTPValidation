@@ -71,7 +71,8 @@ Changes documented below are compared to version 2.0.0-rc.1.
 
 ### Fixed
 
-* N/A
+* Refactor error response references in OTP SMS API (comm. r4.4) by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
+* Clarify identification of Commonalities Release in the error documentation by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/157
 
 ### Removed
 
