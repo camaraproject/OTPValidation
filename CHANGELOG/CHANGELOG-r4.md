@@ -68,7 +68,8 @@ Changes documented below are compared to version 2.0.0-rc.1.
 
 ### Changed
 
-* N/A
+* Rename 429 class to avoid 'generic' use from common file by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+* Refactor error response references in OTP SMS API (comm. r4.4) by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
 
 ### Fixed
 
@@ -76,7 +77,7 @@ Changes documented below are compared to version 2.0.0-rc.1.
 
 ### Removed
 
-* N/A
+* Remove redundant documentation/API_documentation/OTP_SMS_API.md document by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
 
 **Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r4.1...r4.2
 
