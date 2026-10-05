@@ -48,9 +48,9 @@ This process ensures secure, real-time validation of user possession of the spec
 
 ### Upcoming Release Preview
 
-* Pre-release: [r4.1](https://github.com/camaraproject/OTPValidation/releases/tag/r4.1) (release candidate)
-  * **one-time-password-sms 2.0.0-rc.1**
-  [[YAML]](https://github.com/camaraproject/OTPValidation/blob/r4.1/code/API_definitions/one-time-password-sms.yaml)  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.1/code/API_definitions/one-time-password-sms.yaml&nocors)  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.1/code/API_definitions/one-time-password-sms.yaml)
+* Pre-release: [r4.2](https://github.com/camaraproject/OTPValidation/releases/tag/r4.2) (release candidate)
+  * **one-time-password-sms 2.0.0-rc.2**
+  [[YAML]](https://github.com/camaraproject/OTPValidation/blob/r4.2/code/API_definitions/one-time-password-sms.yaml)  [[ReDoc]](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.2/code/API_definitions/one-time-password-sms.yaml&nocors)  [[Swagger]](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.2/code/API_definitions/one-time-password-sms.yaml)
 
 
 _The above section is automatically synchronized by CAMARA project-administration._

@@ -2,6 +2,7 @@
 
 <!-- TOC:START -->
 ## Table of Contents
+- [r4.2](#r42)
 - [r4.1](#r41)
 <!-- TOC:END -->
 
@@ -13,6 +14,52 @@ The below sections record the changes for each API version in each release as fo
 * for the first release-candidate, all changes since the last public release
 * for subsequent release-candidate(s), only the delta to the previous release-candidate
 * for a public release, the consolidated changes since the previous public release
+
+# r4.2
+
+## Release Notes
+
+This release candidate contains the definition and documentation of
+* one-time-password-sms 2.0.0-rc.2
+
+The API definition(s) are based on
+* Commonalities r4.4 (0.9.0)
+* Identity and Consent Management r4.2 (0.5.0)
+
+## one-time-password-sms 2.0.0-rc.2
+
+**one-time-password-sms 2.0.0-rc.2 is a release-candidate version of this API.**
+
+Changes documented below are compared to version 2.0.0-rc.1.
+
+- API definition **with inline documentation**:
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.2/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.2/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r4.2/code/API_definitions/one-time-password-sms.yaml)
+
+### Breaking changes
+
+* N/A
+
+### Added
+
+* N/A
+
+### Changed
+
+* Aligned error responses to Commonalities r4.4 (0.9.0). Response codes, error codes and response schemas are unchanged.
+  * 400/401/403 now use the Commonalities r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`) with shared examples, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
+  * 429 is defined locally as `OneTimePasswordSMS429` instead of the deprecated `Generic429`, keeping `QUOTA_EXCEEDED` and `TOO_MANY_REQUESTS`, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+
+### Fixed
+
+* N/A
+
+### Removed
+
+* Remove redundant documentation/API_documentation/OTP_SMS_API.md document by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r4.1...r4.2
 
 # r4.1
 
