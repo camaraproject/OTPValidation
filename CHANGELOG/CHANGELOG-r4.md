@@ -78,7 +78,8 @@ Changes documented below are compared to version 1.1.1.
 
 ### Breaking changes
 
-* N/A
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation (sendCode now returns `IDENTIFIER_NOT_FOUND` instead of `NOT_FOUND`), tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
 
 ### Added
 
@@ -86,15 +87,23 @@ Changes documented below are compared to version 1.1.1.
 
 ### Changed
 
-* N/A
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
+* Aligned `ErrorInfo`, `XCorrelator` and mandatory `info.description` sections to Commonalities r4.3 by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/140
+* Aligned error responses to Commonalities r4.4 (0.9.0). Response codes, error codes and response schemas are unchanged.
+* 400/401/403 now use the Commonalities r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`) with shared examples, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
+* 429 is defined locally as `OneTimePasswordSMS429` instead of the deprecated `Generic429`, keeping `QUOTA_EXCEEDED` and `TOO_MANY_REQUESTS`, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
 
 ### Fixed
 
-* N/A
+* Fix 2 typos in test definitions (issue 122) by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/129
+* Fix: correct typos in one-time-password-sms.yaml descriptions by @hdamker in https://github.com/camaraproject/OTPValidation/pull/147
+* Solve test-definition consistency findings by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/146
 
 ### Removed
 
-* N/A
+* Removed `OUT_OF_RANGE` from the `validateCode` 400 error enum by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: no field in that operation has a range constraint
+* Remove redundant documentation/API_documentation/OTP_SMS_API.md document by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
 
 **Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r3.2...r4.3
 
