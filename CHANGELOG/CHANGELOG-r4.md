@@ -79,7 +79,7 @@ Changes documented below are compared to version 1.1.1.
 ### Breaking changes
 
 * Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
-* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation (sendCode now returns `IDENTIFIER_NOT_FOUND` instead of `NOT_FOUND`), tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: `sendCode` now returns `IDENTIFIER_NOT_FOUND` instead of `NOT_FOUND` for 404
 
 ### Added
 
@@ -88,15 +88,15 @@ Changes documented below are compared to version 1.1.1.
 ### Changed
 
 * Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
-* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, and add missing 403/400 test coverage
-* Aligned `ErrorInfo`, `XCorrelator` and mandatory `info.description` sections to Commonalities r4.3 by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/140
-* Aligned error responses to Commonalities r4.4 (0.9.0). Response codes, error codes and response schemas are unchanged.
-* 400/401/403 now use the Commonalities r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`) with shared examples, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
-* 429 is defined locally as `OneTimePasswordSMS429` instead of the deprecated `Generic429`, keeping `QUOTA_EXCEEDED` and `TOO_MANY_REQUESTS`, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, state in `info.description` that the API is for two-legged access tokens only, and add missing 403/400 test coverage
+* Aligned with Commonalities r4.4 (0.9.0):
+  * `ErrorInfo`, `XCorrelator` and mandatory `info.description` sections, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/140
+  * 400/401/403 now use the Commonalities r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`) with shared examples, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
+  * 429 is defined locally as `OneTimePasswordSMS429` instead of the deprecated `Generic429`, keeping `QUOTA_EXCEEDED` and `TOO_MANY_REQUESTS`, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
 
 ### Fixed
 
-* Fix 2 typos in test definitions (issue 122) by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/129
+* Fix 2 typos in test definitions by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/129
 * Fix: correct typos in one-time-password-sms.yaml descriptions by @hdamker in https://github.com/camaraproject/OTPValidation/pull/147
 * Solve test-definition consistency findings by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/146
 
