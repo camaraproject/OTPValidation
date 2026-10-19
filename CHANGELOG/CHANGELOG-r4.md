@@ -2,6 +2,7 @@
 
 <!-- TOC:START -->
 ## Table of Contents
+- **[r4.3](#r43)**
 - [r4.2](#r42)
 - [r4.1](#r41)
 <!-- TOC:END -->
@@ -14,6 +15,59 @@ The below sections record the changes for each API version in each release as fo
 * for the first release-candidate, all changes since the last public release
 * for subsequent release-candidate(s), only the delta to the previous release-candidate
 * for a public release, the consolidated changes since the previous public release
+
+# r4.3
+
+## Release Notes
+
+This public release contains the definition and documentation of
+* one-time-password-sms 2.0.0
+
+The API definition(s) are based on
+* Commonalities r4.4 (0.9.0)
+* Identity and Consent Management r4.2 (0.5.0)
+
+## one-time-password-sms 2.0.0
+
+**one-time-password-sms 2.0.0 is a new major version of this API.**
+
+Changes documented below are compared to version 1.1.1.
+
+- API definition **with inline documentation**:
+  - [View it on ReDoc](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.3/code/API_definitions/one-time-password-sms.yaml&nocors)
+  - [View it on Swagger Editor](https://camaraproject.github.io/swagger-ui/?url=https://raw.githubusercontent.com/camaraproject/OTPValidation/r4.3/code/API_definitions/one-time-password-sms.yaml)
+  - OpenAPI [YAML spec file](https://github.com/camaraproject/OTPValidation/blob/r4.3/code/API_definitions/one-time-password-sms.yaml)
+
+### Breaking changes
+
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: `sendCode` now returns `IDENTIFIER_NOT_FOUND` instead of `NOT_FOUND` for 404
+
+### Added
+
+* N/A
+
+### Changed
+
+* Add pattern validation for AuthenticationId field by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/134
+* Align error model and test coverage with issue #144 findings by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: Scope 404 responses per operation, tighten AuthenticationId pattern, reject undeclared request body properties, state in `info.description` that the API is for two-legged access tokens only, and add missing 403/400 test coverage
+* Aligned with Commonalities r4.4 (0.9.0):
+  * `ErrorInfo`, `XCorrelator` and mandatory `info.description` sections, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/140
+  * 400/401/403 now use the Commonalities r4.4 catalogue responses (`BadRequest400`, `Unauthenticated401`, `PermissionDenied403`) with shared examples, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/159
+  * 429 is defined locally as `OneTimePasswordSMS429` instead of the deprecated `Generic429`, keeping `QUOTA_EXCEEDED` and `TOO_MANY_REQUESTS`, by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+
+### Fixed
+
+* Fix 2 typos in test definitions by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/129
+* Fix: correct typos in one-time-password-sms.yaml descriptions by @hdamker in https://github.com/camaraproject/OTPValidation/pull/147
+* Solve test-definition consistency findings by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/146
+
+### Removed
+
+* Removed `OUT_OF_RANGE` from the `validateCode` 400 error enum by @hdamker in https://github.com/camaraproject/OTPValidation/pull/149: no field in that operation has a range constraint
+* Remove redundant documentation/API_documentation/OTP_SMS_API.md document by @bigludo7 in https://github.com/camaraproject/OTPValidation/pull/166
+
+**Full Changelog**: https://github.com/camaraproject/OTPValidation/compare/r3.2...r4.3
 
 # r4.2
 
