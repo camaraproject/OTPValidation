@@ -2,7 +2,7 @@ repository:
   repository_name: OTPValidation
   release_tag: r4.3
   release_type: public-release
-  release_date: null
+  release_date: '2026-10-19T12:40:40Z'
   src_commit_sha: 86df7d030ce7f867db6e1eee633b4e8d5395030b
 apis:
 - api_name: one-time-password-sms
