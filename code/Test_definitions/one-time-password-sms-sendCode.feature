@@ -7,7 +7,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
 #     *For additional test scenarios, operator could provide phone number for line that cannot receive SMS, line that blocked SMS reception, not belonging to the operator, designing a landline number.
 # * message: Message template used to compose the content of the SMS sent to the phone number.
 #     *It must include the following label indicating where to include the short code {{code}}.
-# * max_send: maximum number of OTP requests allowed for a device for a short period of time
+# * max_send: maximum number of send-code requests allowed for a phone number for a short period of time
 #
 # References to OAS spec schemas refer to schemas specifies in one-time-password-sms.yaml
 
@@ -185,7 +185,7 @@ Feature: one-time-password-sms, vwip - Operation sendCode
   Scenario: Validation for failed scenario too many codes have been requested
     Given the request body property "$.phoneNumber" is set to config_var: "phone_number"
     And the request body property "$.message" is set to config_var: "message"
-    And (config_var:"max_send"-1) of send-code requests for this phone number has been submitted
+    And (config_var:"max_send") of send-code requests for this phone number has been submitted
     When the HTTP "POST" request is sent
     Then the response status code is 403
     And the response header "x-correlator" has same value as the request header "x-correlator"
